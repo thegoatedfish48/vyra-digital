@@ -52,8 +52,6 @@ const contacts = [
   },
 ];
 
-const EMAIL = contacts[0].email;
-
 const products = [
   {
     name: "Posters",
