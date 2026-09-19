@@ -36,7 +36,8 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-const EMAIL = "hello@vyra-digital.co.za";
+const EMAIL = "thegoatedfish48@gmail.com";
+const EMAIL_2 = "tumi.bepete@gmail.com";
 const WHATSAPP = "https://wa.me/27000000000";
 
 const products = [
@@ -214,9 +215,18 @@ function Index() {
               </p>
               <a
                 href={`mailto:${EMAIL}`}
-                className="block font-display text-2xl font-bold underline-offset-4 hover:underline"
+                className="block break-all font-display text-2xl font-bold underline-offset-4 hover:underline"
               >
                 {EMAIL}
+              </a>
+              <p className="mt-4 font-display text-sm font-semibold uppercase tracking-widest text-primary-foreground/70">
+                or
+              </p>
+              <a
+                href={`mailto:${EMAIL_2}`}
+                className="block break-all font-display text-xl font-bold underline-offset-4 hover:underline"
+              >
+                {EMAIL_2}
               </a>
               <a
                 href={WHATSAPP}
