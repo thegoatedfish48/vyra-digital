@@ -21,3 +21,4 @@
 - [x] Names confirmed and live: Michael (option 1) + Tumi (option 2), shown above each email/WhatsApp pair
 - [x] Intro copy now names Michael & Tumi; contact block reads "Reach us" / "tell us"
 - [x] Real slogan in the hero headline: "Better than best" (also in og:title / twitter:title)
+- [x] Replace the four product placeholders with Michael and Tumi's logo, wallpaper, poster and party invite artwork
