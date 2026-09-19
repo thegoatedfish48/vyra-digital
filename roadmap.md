@@ -10,4 +10,7 @@
 
 ## Waiting on user
 - Real WhatsApp number (placeholder wa.me/27000000000 in use)
-- Confirm email (hello@vyra-digital.co.za assumed) and social handle (@vyradigital assumed)
+- Confirm social handle (@vyradigital assumed)
+
+## Done since
+- [x] Emails confirmed and live: thegoatedfish48@gmail.com (primary) + tumi.bepete@gmail.com (second option)
