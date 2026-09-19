@@ -36,6 +36,7 @@ export const Route = createFileRoute("/")({
   }),
 });
 
+const EMAIL = "thegoatedfish48@gmail.com";
 const ORDER_NOTE = "Hi Vyra! I'd like to order something.";
 
 const contacts = [
