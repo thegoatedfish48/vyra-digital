@@ -41,11 +41,13 @@ const ORDER_NOTE = "Hi Vyra! I'd like to order something.";
 
 const contacts = [
   {
+    name: "Michael",
     email: "thegoatedfish48@gmail.com",
     phone: "069 441 2998",
     whatsapp: `https://wa.me/27694412998?text=${encodeURIComponent(ORDER_NOTE)}`,
   },
   {
+    name: "Tumi",
     email: "tumi.bepete@gmail.com",
     phone: "079 714 6472",
     whatsapp: `https://wa.me/27797146472?text=${encodeURIComponent(ORDER_NOTE)}`,
@@ -234,6 +236,14 @@ function Index() {
                       : undefined
                   }
                 >
+                  <div className="mb-2 flex items-center gap-2.5">
+                    <span className="grid size-8 place-items-center rounded-full bg-accent font-display text-sm font-bold text-accent-foreground">
+                      {contact.name.charAt(0)}
+                    </span>
+                    <span className="font-display text-lg font-bold">
+                      {contact.name}
+                    </span>
+                  </div>
                   <a
                     href={`mailto:${contact.email}`}
                     className="block break-all font-display text-xl font-bold underline-offset-4 hover:underline"
