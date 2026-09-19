@@ -117,7 +117,7 @@ function Index() {
             Better than{" "}
             <span className="relative inline-block">
               <span className="relative z-10">best</span>
-              <span className="absolute inset-0 -rotate-2 rounded-lg bg-accent" />
+              <span className="absolute inset-x-[-0.3em] top-[-0.06em] bottom-[-0.2em] -rotate-2 rounded-lg bg-accent" />
             </span>
           </h1>
           <p className="mt-5 font-display text-xl font-semibold text-foreground">
