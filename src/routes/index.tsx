@@ -125,9 +125,9 @@ function Index() {
             you.
           </h1>
           <p className="mt-6 max-w-md text-lg leading-relaxed text-muted-foreground">
-            Posters, logos, party invites &amp; wallpapers — hand-made by one
-            very caffeinated designer. No checkout, no fuss: just pick a price,
-            send a note, and you're sorted.
+            Posters, logos, party invites &amp; wallpapers — hand-made by
+            Michael &amp; Tumi, two very caffeinated designers. No checkout, no
+            fuss: just pick a price, send a note, and you're sorted.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
@@ -219,13 +219,13 @@ function Index() {
                 something.
               </h2>
               <p className="mt-5 max-w-sm text-lg leading-relaxed text-primary-foreground/85">
-                No online checkout here — just tell me what you need and I'll
-                sort it out personally. Usually replies within a day.
+                No online checkout here — just tell us what you need and we'll
+                sort it out personally. Usually reply within a day.
               </p>
             </div>
             <div className="rounded-3xl border border-primary-foreground/20 bg-primary-foreground/10 p-7">
               <p className="mb-5 font-display text-sm font-semibold uppercase tracking-widest text-primary-foreground/70">
-                Reach me
+                Reach us
               </p>
               {contacts.map((contact, i) => (
                 <div
@@ -262,7 +262,7 @@ function Index() {
                 </div>
               ))}
               <p className="mt-5 text-sm text-primary-foreground/70">
-                @vyradigital · vyra-digital.co.za
+                vyra-digital.co.za
               </p>
               <a
                 href={`mailto:${EMAIL}?subject=Order%20from%20vyra-digital.co.za`}
