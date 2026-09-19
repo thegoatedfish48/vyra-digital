@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import heroCollage from "../assets/hero-collage.jpg";
-import productPoster from "../assets/product-poster.jpg";
-import productLogo from "../assets/product-logo.jpg";
-import productInvite from "../assets/product-invite.jpg";
-import productWallpaper from "../assets/product-wallpaper.jpg";
+import productPosterAsset from "../assets/vyra-poster.png.asset.json";
+import productLogoAsset from "../assets/vyra-logo.png.asset.json";
+import productInviteAsset from "../assets/vyra-party-invite.png.asset.json";
+import productWallpaperAsset from "../assets/vyra-wallpaper.png.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -58,29 +58,29 @@ const products = [
   {
     name: "Posters",
     price: "R25",
-    image: productPoster,
-    alt: "A bright flat digital poster with bold shapes",
+    image: productPosterAsset.url,
+    alt: "Digital poster reading Discipline is the best teacher",
     blurb: "Print-ready or screen-ready. Wall art that actually makes you smile.",
   },
   {
     name: "Logos",
     price: "R50",
-    image: productLogo,
-    alt: "A set of playful minimalist logo marks",
+    image: productLogoAsset.url,
+    alt: "Black and white Graue Zero logo by Vyra Digital",
     blurb: "A little mark for your side project, café or brand. Clean and yours.",
   },
   {
     name: "Party invites",
     price: "R30",
-    image: productInvite,
-    alt: "A cheerful party invitation card with confetti",
+    image: productInviteAsset.url,
+    alt: "Pink and charcoal Come to Jakes Awesome 13 party invitation",
     blurb: "Birthdays, braais, baby showers — invites that get people excited.",
   },
   {
     name: "Wallpapers",
     price: "R15",
-    image: productWallpaper,
-    alt: "A phone screen showing a soft gradient wallpaper",
+    image: productWallpaperAsset.url,
+    alt: "Purple Coming Soon typographic wallpaper on black",
     blurb:
       "Fresh phone & desktop backgrounds to swap in every time you're bored.",
   },
