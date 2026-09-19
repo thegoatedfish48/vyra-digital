@@ -9,8 +9,8 @@
 - [x] Verify build + preview (screenshots checked, no console errors)
 
 ## Waiting on user
-- Real WhatsApp number (placeholder wa.me/27000000000 in use)
 - Confirm social handle (@vyradigital assumed)
 
 ## Done since
 - [x] Emails confirmed and live: thegoatedfish48@gmail.com (primary) + tumi.bepete@gmail.com (second option)
+- [x] WhatsApp numbers confirmed and live: 069 441 2998 + 079 714 6472, each paired with its email
