@@ -9,11 +9,11 @@
 - [x] Verify build + preview (screenshots checked, no console errors)
 
 - [x] Publish requested → https://vyra-sparkle-web.lovable.app
+- [x] Lovable URL renamed → https://vyra-digital.lovable.app (publish re-requested, serves 200)
 
 ## Waiting on user
 - Social handle (if wanted): none shown — @vyradigital was invented and removed before publishing
 - Custom domain vyra-digital.co.za: connect in Project settings > Domains
-- Lovable URL name: currently vyra-sparkle-web, can be renamed
 
 ## Done since
 - [x] Emails confirmed and live: thegoatedfish48@gmail.com (primary) + tumi.bepete@gmail.com (second option)
