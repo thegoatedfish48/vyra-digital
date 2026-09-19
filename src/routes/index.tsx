@@ -37,8 +37,20 @@ export const Route = createFileRoute("/")({
 });
 
 const EMAIL = "thegoatedfish48@gmail.com";
-const EMAIL_2 = "tumi.bepete@gmail.com";
-const WHATSAPP = "https://wa.me/27000000000";
+const ORDER_NOTE = "Hi Vyra! I'd like to order something.";
+
+const contacts = [
+  {
+    email: "thegoatedfish48@gmail.com",
+    phone: "069 441 2998",
+    whatsapp: `https://wa.me/27694412998?text=${encodeURIComponent(ORDER_NOTE)}`,
+  },
+  {
+    email: "tumi.bepete@gmail.com",
+    phone: "079 714 6472",
+    whatsapp: `https://wa.me/27797146472?text=${encodeURIComponent(ORDER_NOTE)}`,
+  },
+];
 
 const products = [
   {
@@ -213,30 +225,33 @@ function Index() {
               <p className="mb-5 font-display text-sm font-semibold uppercase tracking-widest text-primary-foreground/70">
                 Reach me
               </p>
-              <a
-                href={`mailto:${EMAIL}`}
-                className="block break-all font-display text-2xl font-bold underline-offset-4 hover:underline"
-              >
-                {EMAIL}
-              </a>
-              <p className="mt-4 font-display text-sm font-semibold uppercase tracking-widest text-primary-foreground/70">
-                or
-              </p>
-              <a
-                href={`mailto:${EMAIL_2}`}
-                className="block break-all font-display text-xl font-bold underline-offset-4 hover:underline"
-              >
-                {EMAIL_2}
-              </a>
-              <a
-                href={WHATSAPP}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-2 block font-display text-xl font-semibold underline-offset-4 hover:underline"
-              >
-                WhatsApp me
-              </a>
-              <p className="mt-4 text-sm text-primary-foreground/70">
+              {contacts.map((contact, i) => (
+                <div
+                  key={contact.email}
+                  className={
+                    i > 0
+                      ? "mt-5 border-t border-primary-foreground/20 pt-5"
+                      : undefined
+                  }
+                >
+                  <a
+                    href={`mailto:${contact.email}`}
+                    className="block break-all font-display text-xl font-bold underline-offset-4 hover:underline"
+                  >
+                    {contact.email}
+                  </a>
+                  <a
+                    href={contact.whatsapp}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-1.5 inline-flex flex-wrap items-baseline gap-x-2 font-display text-lg font-semibold underline-offset-4 hover:underline"
+                  >
+                    <span className="text-primary-foreground/70">WhatsApp</span>
+                    <span>{contact.phone}</span>
+                  </a>
+                </div>
+              ))}
+              <p className="mt-5 text-sm text-primary-foreground/70">
                 @vyradigital · vyra-digital.co.za
               </p>
               <a
