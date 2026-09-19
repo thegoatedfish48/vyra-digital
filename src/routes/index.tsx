@@ -16,7 +16,7 @@ export const Route = createFileRoute("/")({
         content:
           "A tiny South African design studio making digital posters (R25), logos (R50), party invites (R30) and wallpapers (R15). Pick a price, send a message, get your file.",
       },
-      { property: "og:title", content: "Vyra Digital — Little bits of digital joy" },
+      { property: "og:title", content: "Vyra Digital — Better than best" },
       {
         property: "og:description",
         content:
@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:title", content: "Vyra Digital — Little bits of digital joy" },
+      { name: "twitter:title", content: "Vyra Digital — Better than best" },
       {
         name: "twitter:description",
         content:
@@ -114,17 +114,16 @@ function Index() {
             A tiny studio in South Africa ✦
           </span>
           <h1 className="mt-6 font-display text-6xl font-bold leading-[0.92] sm:text-7xl">
-            Little bits of <span className="text-primary">digital</span>
-            <br />
-            joy,{" "}
+            Better than{" "}
             <span className="relative inline-block">
-              <span className="relative z-10">made for</span>
+              <span className="relative z-10">best</span>
               <span className="absolute inset-0 -rotate-2 rounded-lg bg-accent" />
             </span>
-            <br />
-            you.
           </h1>
-          <p className="mt-6 max-w-md text-lg leading-relaxed text-muted-foreground">
+          <p className="mt-5 font-display text-xl font-semibold text-foreground">
+            Little bits of digital joy, made for you.
+          </p>
+          <p className="mt-3 max-w-md text-lg leading-relaxed text-muted-foreground">
             Posters, logos, party invites &amp; wallpapers — hand-made by
             Michael &amp; Tumi, two very caffeinated designers. No checkout, no
             fuss: just pick a price, send a note, and you're sorted.
