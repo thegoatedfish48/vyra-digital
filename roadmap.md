@@ -20,3 +20,4 @@
 - [x] WhatsApp numbers confirmed and live: 069 441 2998 + 079 714 6472, each paired with its email
 - [x] Names confirmed and live: Michael (option 1) + Tumi (option 2), shown above each email/WhatsApp pair
 - [x] Intro copy now names Michael & Tumi; contact block reads "Reach us" / "tell us"
+- [x] Real slogan in the hero headline: "Better than best" (also in og:title / twitter:title)
