@@ -99,20 +99,18 @@
   }
 }
 
-@layer utilities {
-  .animate-floaty {
-    animation: floaty 5s ease-in-out infinite;
-  }
+@utility animate-floaty {
+  animation: floaty 5s ease-in-out infinite;
+}
 
-  .animate-spin-slow {
-    animation: spin-slow 22s linear infinite;
-  }
+@utility animate-spin-slow {
+  animation: spin-slow 22s linear infinite;
+}
 
-  .shadow-lift {
-    box-shadow: 0 6px 0 0 oklch(0.269 0.033 305.8 / 15%);
-  }
+@utility shadow-lift {
+  box-shadow: 0 6px 0 0 oklch(0.269 0.033 305.8 / 15%);
+}
 
-  .shadow-lift-lg {
-    box-shadow: 0 12px 0 0 oklch(0.269 0.033 305.8 / 12%);
-  }
+@utility shadow-lift-lg {
+  box-shadow: 0 12px 0 0 oklch(0.269 0.033 305.8 / 12%);
 }
