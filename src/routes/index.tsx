@@ -1,10 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import heroCollage from "../assets/hero-collage.jpg";
-import productPosterAsset from "../assets/vyra-poster.png.asset.json";
-import productLogoAsset from "../assets/vyra-logo.png.asset.json";
-import productInviteAsset from "../assets/vyra-party-invite.png.asset.json";
-import productWallpaperAsset from "../assets/vyra-wallpaper.png.asset.json";
+const heroCollage = "/assets/hero-collage.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
