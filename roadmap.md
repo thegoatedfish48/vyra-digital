@@ -10,6 +10,7 @@
 
 - [x] Publish requested → https://vyra-sparkle-web.lovable.app
 - [x] Lovable URL renamed → https://vyra-digital.lovable.app (publish re-requested, serves 200)
+- [x] Re-published latest version (slogan headline + 4 real artwork images) — verified live 20 Sep 2026
 
 ## Waiting on user
 - Social handle (if wanted): none shown — @vyradigital was invented and removed before publishing
