@@ -54,28 +54,28 @@ const products = [
   {
     name: "Posters",
     price: "R25",
-    image: productPosterAsset.url,
+    image: "/assets/vyra-poster.png",
     alt: "Digital poster reading Discipline is the best teacher",
     blurb: "Print-ready or screen-ready. Wall art that actually makes you smile.",
   },
   {
     name: "Logos",
     price: "R50",
-    image: productLogoAsset.url,
+    image: "/assets/vyra-logo.png",
     alt: "Black and white Graue Zero logo by Vyra Digital",
     blurb: "A little mark for your side project, café or brand. Clean and yours.",
   },
   {
     name: "Party invites",
     price: "R30",
-    image: productInviteAsset.url,
+    image: "/assets/vyra-party-invite.png",
     alt: "Pink and charcoal Come to Jakes Awesome 13 party invitation",
     blurb: "Birthdays, braais, baby showers — invites that get people excited.",
   },
   {
     name: "Wallpapers",
     price: "R15",
-    image: productWallpaperAsset.url,
+    image: "/assets/vyra-wallpaper.png",
     alt: "Purple Coming Soon typographic wallpaper on black",
     blurb:
       "Fresh phone & desktop backgrounds to swap in every time you're bored.",
