@@ -23,3 +23,4 @@
 - [x] Intro copy now names Michael & Tumi; contact block reads "Reach us" / "tell us"
 - [x] Real slogan in the hero headline: "Better than best" (also in og:title / twitter:title)
 - [x] Replace the four product placeholders with Michael and Tumi's logo, wallpaper, poster and party invite artwork
+- [x] Prices changed at the user's request: logo R50 → R30, party invites R30 → R50 (poster R25, wallpaper R15 unchanged)

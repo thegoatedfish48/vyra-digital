@@ -10,13 +10,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "A tiny South African design studio making digital posters (R25), logos (R50), party invites (R30) and wallpapers (R15). Pick a price, send a message, get your file.",
+          "A tiny South African design studio making digital posters (R25), logos (R30), party invites (R50) and wallpapers (R15). Pick a price, send a message, get your file.",
       },
       { property: "og:title", content: "Vyra Digital — Better than best" },
       {
         property: "og:description",
         content:
-          "Digital posters R25, logos R50, party invites R30, wallpapers R15. Handmade in South Africa — just message to order.",
+          "Digital posters R25, logos R30, party invites R50, wallpapers R15. Handmade in South Africa — just message to order.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
       {
         name: "twitter:description",
         content:
-          "Digital posters R25, logos R50, party invites R30, wallpapers R15. Handmade in South Africa — just message to order.",
+          "Digital posters R25, logos R30, party invites R50, wallpapers R15. Handmade in South Africa — just message to order.",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -60,14 +60,14 @@ const products = [
   },
   {
     name: "Logos",
-    price: "R50",
+    price: "R30",
     image: "/assets/vyra-logo.png",
     alt: "Black and white Graue Zero logo by Vyra Digital",
     blurb: "A little mark for your side project, café or brand. Clean and yours.",
   },
   {
     name: "Party invites",
-    price: "R30",
+    price: "R50",
     image: "/assets/vyra-party-invite.png",
     alt: "Pink and charcoal Come to Jakes Awesome 13 party invitation",
     blurb: "Birthdays, braais, baby showers — invites that get people excited.",
