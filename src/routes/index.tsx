@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 
 const heroCollage = "/assets/hero-collage.jpg";
 
@@ -105,7 +106,11 @@ const logoTiers = [
   },
 ];
 
+type Product = (typeof products)[number];
+
 function Index() {
+  const [viewing, setViewing] = useState<Product | null>(null);
+
   return (
     <div className="min-h-screen bg-background font-body text-foreground antialiased overflow-x-hidden">
       {/* top bar */}
@@ -201,14 +206,24 @@ function Index() {
               key={product.name}
               className="rounded-3xl border-2 border-border bg-card p-6 shadow-lift transition-all hover:-translate-y-2 hover:shadow-lift-lg"
             >
-              <img
-                src={product.image}
-                alt={product.alt}
-                loading="lazy"
-                width={736}
-                height={912}
-                className="mb-5 aspect-[4/5] w-full rounded-2xl object-cover"
-              />
+              <button
+                type="button"
+                onClick={() => setViewing(product)}
+                className="group relative mb-5 block w-full cursor-pointer"
+                aria-label={`View ${product.name} example full size`}
+              >
+                <img
+                  src={product.image}
+                  alt={product.alt}
+                  loading="lazy"
+                  width={736}
+                  height={912}
+                  className="aspect-[4/5] w-full rounded-2xl object-cover"
+                />
+                <span className="absolute inset-x-0 bottom-3 mx-auto w-fit rounded-full bg-foreground px-4 py-1.5 font-display text-sm font-bold text-background opacity-0 shadow-lift transition-opacity group-hover:opacity-100">
+                  View full size
+                </span>
+              </button>
               <div className="flex items-center justify-between">
                 <h3 className="font-display text-2xl font-bold">
                   {product.name}
@@ -220,6 +235,13 @@ function Index() {
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 {product.blurb}
               </p>
+              <button
+                type="button"
+                onClick={() => setViewing(product)}
+                className="mt-4 font-display text-sm font-bold text-primary underline-offset-4 hover:underline"
+              >
+                View this design →
+              </button>
             </div>
           ))}
         </div>
@@ -333,6 +355,45 @@ function Index() {
         </p>
         <p className="text-sm">Prices in South African Rand</p>
       </footer>
+
+      {/* full-size view */}
+      {viewing && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${viewing.name} example`}
+          onClick={() => setViewing(null)}
+          className="fixed inset-0 z-50 grid place-items-center bg-foreground/80 p-6 backdrop-blur-sm"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative w-full max-w-md rounded-[2rem] bg-card p-5 shadow-lift-lg"
+          >
+            <img
+              src={viewing.image}
+              alt={viewing.alt}
+              className="w-full rounded-2xl object-contain"
+            />
+            <div className="mt-4 flex items-center justify-between gap-3">
+              <div>
+                <h3 className="font-display text-2xl font-bold">
+                  {viewing.name}
+                </h3>
+                <p className="font-display text-lg font-semibold text-primary">
+                  {viewing.price}
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setViewing(null)}
+                className="rounded-full border-2 border-foreground px-5 py-2 font-display text-sm font-bold transition-colors hover:bg-foreground hover:text-background"
+              >
+                Close ✕
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
