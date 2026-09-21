@@ -11,13 +11,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "A tiny South African design studio making digital posters (R25), logos (from R150), party invites (R50) and wallpapers (R15). Pick a price, send a message, get your file.",
+          "A tiny South African design studio making digital posters (R30–R150), logos (from R150), party invites (R60–R400) and wallpapers (R15–R80). Pick a price, send a message, get your file.",
       },
       { property: "og:title", content: "Vyra Digital — Better than best" },
       {
         property: "og:description",
         content:
-          "Digital posters R25, logos from R150, party invites R50, wallpapers R15. Handmade in South Africa — just message to order.",
+          "Digital posters R30–R150, logos from R150, party invites R60–R400, wallpapers R15–R80. Handmade in South Africa — just message to order.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -26,7 +26,7 @@ export const Route = createFileRoute("/")({
       {
         name: "twitter:description",
         content:
-          "Digital posters R25, logos from R150, party invites R50, wallpapers R15. Handmade in South Africa — just message to order.",
+          "Digital posters R30–R150, logos from R150, party invites R60–R400, wallpapers R15–R80. Handmade in South Africa — just message to order.",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -54,7 +54,7 @@ const contacts = [
 const products = [
   {
     name: "Posters",
-    price: "R25",
+    price: "R30–R150",
     image: "/assets/vyra-poster.png",
     alt: "Digital poster reading Discipline is the best teacher",
     blurb: "Print-ready or screen-ready. Wall art that actually makes you smile.",
@@ -68,14 +68,14 @@ const products = [
   },
   {
     name: "Party invites",
-    price: "R50",
+    price: "R60–R400",
     image: "/assets/vyra-party-invite.png",
     alt: "Pink and charcoal Come to Jakes Awesome 13 party invitation",
     blurb: "Birthdays, braais, baby showers — invites that get people excited.",
   },
   {
     name: "Wallpapers",
-    price: "R15",
+    price: "R15–R80",
     image: "/assets/vyra-wallpaper.png",
     alt: "Purple Coming Soon typographic wallpaper on black",
     blurb:
@@ -103,6 +103,27 @@ const logoTiers = [
     name: "Logo + profile picture",
     price: "R350",
     blurb: "A logo plus a matching profile pic for your socials.",
+  },
+];
+
+const priceRanges = [
+  {
+    name: "Poster prices",
+    range: "R30 – R150",
+    blurb:
+      "A simple, clean design starts at R30. Bigger, more detailed custom posters go up to R150.",
+  },
+  {
+    name: "Party invite prices",
+    range: "R60 – R400",
+    blurb:
+      "A fun single invite starts at R60. Fully custom, themed invite sets go up to R400.",
+  },
+  {
+    name: "Wallpaper prices",
+    range: "R15 – R80",
+    blurb:
+      "A fresh ready-made wallpaper is R15. Something custom-made just for you goes up to R80.",
   },
 ];
 
@@ -274,6 +295,41 @@ function Index() {
                 </div>
                 <span className="shrink-0 -rotate-3 rounded-full bg-secondary px-4 py-1.5 font-display text-lg font-bold text-secondary-foreground">
                   {tier.price}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* other price ranges */}
+      <section className="mx-auto max-w-6xl px-6 pb-16">
+        <div className="rounded-[2.5rem] border-2 border-border bg-card p-8 shadow-lift sm:p-12">
+          <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+            <h2 className="font-display text-4xl font-bold sm:text-5xl">
+              Posters, invites &amp; wallpaper prices
+            </h2>
+            <p className="max-w-xs font-display font-semibold text-muted-foreground">
+              The price depends on what you ask for — tell us your idea and
+              we'll quote you.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {priceRanges.map((item) => (
+              <div
+                key={item.name}
+                className="flex flex-col gap-4 rounded-3xl bg-background p-6"
+              >
+                <div>
+                  <h3 className="font-display text-xl font-bold">
+                    {item.name}
+                  </h3>
+                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                    {item.blurb}
+                  </p>
+                </div>
+                <span className="w-fit -rotate-3 rounded-full bg-secondary px-4 py-1.5 font-display text-lg font-bold text-secondary-foreground">
+                  {item.range}
                 </span>
               </div>
             ))}
