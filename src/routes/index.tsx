@@ -60,7 +60,7 @@ const products = [
   },
   {
     name: "Logos",
-    price: "R30",
+    price: "from R150",
     image: "/assets/vyra-logo.png",
     alt: "Black and white Graue Zero logo by Vyra Digital",
     blurb: "A little mark for your side project, café or brand. Clean and yours.",
