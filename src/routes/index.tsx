@@ -10,7 +10,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "A tiny South African design studio making digital posters (R25), logos (R30), party invites (R50) and wallpapers (R15). Pick a price, send a message, get your file.",
+          "A tiny South African design studio making digital posters (R25), logos (from R150), party invites (R50) and wallpapers (R15). Pick a price, send a message, get your file.",
       },
       { property: "og:title", content: "Vyra Digital — Better than best" },
       {
