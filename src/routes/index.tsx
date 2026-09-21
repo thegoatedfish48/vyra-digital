@@ -106,7 +106,11 @@ const logoTiers = [
   },
 ];
 
+type Product = (typeof products)[number];
+
 function Index() {
+  const [viewing, setViewing] = useState<Product | null>(null);
+
   return (
     <div className="min-h-screen bg-background font-body text-foreground antialiased overflow-x-hidden">
       {/* top bar */}
