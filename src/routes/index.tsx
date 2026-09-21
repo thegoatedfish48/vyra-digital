@@ -106,6 +106,27 @@ const logoTiers = [
   },
 ];
 
+const priceRanges = [
+  {
+    name: "Poster prices",
+    range: "R30 – R150",
+    blurb:
+      "A simple, clean design starts at R30. Bigger, more detailed custom posters go up to R150.",
+  },
+  {
+    name: "Party invite prices",
+    range: "R60 – R400",
+    blurb:
+      "A fun single invite starts at R60. Fully custom, themed invite sets go up to R400.",
+  },
+  {
+    name: "Wallpaper prices",
+    range: "R15 – R80",
+    blurb:
+      "A fresh ready-made wallpaper is R15. Something custom-made just for you goes up to R80.",
+  },
+];
+
 type Product = (typeof products)[number];
 
 function Index() {
@@ -274,6 +295,41 @@ function Index() {
                 </div>
                 <span className="shrink-0 -rotate-3 rounded-full bg-secondary px-4 py-1.5 font-display text-lg font-bold text-secondary-foreground">
                   {tier.price}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* other price ranges */}
+      <section className="mx-auto max-w-6xl px-6 pb-16">
+        <div className="rounded-[2.5rem] border-2 border-border bg-card p-8 shadow-lift sm:p-12">
+          <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+            <h2 className="font-display text-4xl font-bold sm:text-5xl">
+              Posters, invites &amp; wallpaper prices
+            </h2>
+            <p className="max-w-xs font-display font-semibold text-muted-foreground">
+              The price depends on what you ask for — tell us your idea and
+              we'll quote you.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {priceRanges.map((item) => (
+              <div
+                key={item.name}
+                className="flex flex-col gap-4 rounded-3xl bg-background p-6"
+              >
+                <div>
+                  <h3 className="font-display text-xl font-bold">
+                    {item.name}
+                  </h3>
+                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                    {item.blurb}
+                  </p>
+                </div>
+                <span className="w-fit -rotate-3 rounded-full bg-secondary px-4 py-1.5 font-display text-lg font-bold text-secondary-foreground">
+                  {item.range}
                 </span>
               </div>
             ))}
