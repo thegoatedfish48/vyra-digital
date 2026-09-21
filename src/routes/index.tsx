@@ -355,6 +355,45 @@ function Index() {
         </p>
         <p className="text-sm">Prices in South African Rand</p>
       </footer>
+
+      {/* full-size view */}
+      {viewing && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${viewing.name} example`}
+          onClick={() => setViewing(null)}
+          className="fixed inset-0 z-50 grid place-items-center bg-foreground/80 p-6 backdrop-blur-sm"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative w-full max-w-md rounded-[2rem] bg-card p-5 shadow-lift-lg"
+          >
+            <img
+              src={viewing.image}
+              alt={viewing.alt}
+              className="w-full rounded-2xl object-contain"
+            />
+            <div className="mt-4 flex items-center justify-between gap-3">
+              <div>
+                <h3 className="font-display text-2xl font-bold">
+                  {viewing.name}
+                </h3>
+                <p className="font-display text-lg font-semibold text-primary">
+                  {viewing.price}
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setViewing(null)}
+                className="rounded-full border-2 border-foreground px-5 py-2 font-display text-sm font-bold transition-colors hover:bg-foreground hover:text-background"
+              >
+                Close ✕
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
