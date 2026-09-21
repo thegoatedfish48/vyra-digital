@@ -82,6 +82,29 @@ const products = [
   },
 ];
 
+const logoTiers = [
+  {
+    name: "Basic logo",
+    price: "R150",
+    blurb: "One clean, simple logo. Perfect for getting started.",
+  },
+  {
+    name: "Custom logo",
+    price: "R250",
+    blurb: "Made from scratch around your idea, name and colours.",
+  },
+  {
+    name: "Premium logo package",
+    price: "R550",
+    blurb: "The full works — versions, variations and files for everywhere.",
+  },
+  {
+    name: "Logo + profile picture",
+    price: "R350",
+    blurb: "A logo plus a matching profile pic for your socials.",
+  },
+];
+
 function Index() {
   return (
     <div className="min-h-screen bg-background font-body text-foreground antialiased overflow-x-hidden">
@@ -199,6 +222,40 @@ function Index() {
               </p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* logo price list */}
+      <section className="mx-auto max-w-6xl px-6 pb-16">
+        <div className="rounded-[2.5rem] border-2 border-border bg-card p-8 shadow-lift sm:p-12">
+          <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+            <h2 className="font-display text-4xl font-bold sm:text-5xl">
+              Logo prices, pick your fit
+            </h2>
+            <p className="max-w-xs font-display font-semibold text-muted-foreground">
+              Four ways to get a logo — from a quick mark to the full package.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {logoTiers.map((tier) => (
+              <div
+                key={tier.name}
+                className="flex items-center justify-between gap-4 rounded-3xl bg-background p-6"
+              >
+                <div>
+                  <h3 className="font-display text-xl font-bold">
+                    {tier.name}
+                  </h3>
+                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                    {tier.blurb}
+                  </p>
+                </div>
+                <span className="shrink-0 -rotate-3 rounded-full bg-secondary px-4 py-1.5 font-display text-lg font-bold text-secondary-foreground">
+                  {tier.price}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
