@@ -235,6 +235,13 @@ function Index() {
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 {product.blurb}
               </p>
+              <button
+                type="button"
+                onClick={() => setViewing(product)}
+                className="mt-4 font-display text-sm font-bold text-primary underline-offset-4 hover:underline"
+              >
+                View this design →
+              </button>
             </div>
           ))}
         </div>
