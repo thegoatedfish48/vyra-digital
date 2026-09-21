@@ -11,13 +11,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "A tiny South African design studio making digital posters (R25), logos (from R150), party invites (R50) and wallpapers (R15). Pick a price, send a message, get your file.",
+          "A tiny South African design studio making digital posters (R30–R150), logos (from R150), party invites (R60–R400) and wallpapers (R15–R80). Pick a price, send a message, get your file.",
       },
       { property: "og:title", content: "Vyra Digital — Better than best" },
       {
         property: "og:description",
         content:
-          "Digital posters R25, logos from R150, party invites R50, wallpapers R15. Handmade in South Africa — just message to order.",
+          "Digital posters R30–R150, logos from R150, party invites R60–R400, wallpapers R15–R80. Handmade in South Africa — just message to order.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -26,7 +26,7 @@ export const Route = createFileRoute("/")({
       {
         name: "twitter:description",
         content:
-          "Digital posters R25, logos from R150, party invites R50, wallpapers R15. Handmade in South Africa — just message to order.",
+          "Digital posters R30–R150, logos from R150, party invites R60–R400, wallpapers R15–R80. Handmade in South Africa — just message to order.",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -54,7 +54,7 @@ const contacts = [
 const products = [
   {
     name: "Posters",
-    price: "R25",
+    price: "R30–R150",
     image: "/assets/vyra-poster.png",
     alt: "Digital poster reading Discipline is the best teacher",
     blurb: "Print-ready or screen-ready. Wall art that actually makes you smile.",
@@ -68,14 +68,14 @@ const products = [
   },
   {
     name: "Party invites",
-    price: "R50",
+    price: "R60–R400",
     image: "/assets/vyra-party-invite.png",
     alt: "Pink and charcoal Come to Jakes Awesome 13 party invitation",
     blurb: "Birthdays, braais, baby showers — invites that get people excited.",
   },
   {
     name: "Wallpapers",
-    price: "R15",
+    price: "R15–R80",
     image: "/assets/vyra-wallpaper.png",
     alt: "Purple Coming Soon typographic wallpaper on black",
     blurb:
