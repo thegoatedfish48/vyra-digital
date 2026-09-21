@@ -16,7 +16,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Digital posters R25, logos R30, party invites R50, wallpapers R15. Handmade in South Africa — just message to order.",
+          "Digital posters R25, logos from R150, party invites R50, wallpapers R15. Handmade in South Africa — just message to order.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
       {
         name: "twitter:description",
         content:
-          "Digital posters R25, logos R30, party invites R50, wallpapers R15. Handmade in South Africa — just message to order.",
+          "Digital posters R25, logos from R150, party invites R50, wallpapers R15. Handmade in South Africa — just message to order.",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
