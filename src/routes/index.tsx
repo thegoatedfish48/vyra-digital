@@ -206,14 +206,24 @@ function Index() {
               key={product.name}
               className="rounded-3xl border-2 border-border bg-card p-6 shadow-lift transition-all hover:-translate-y-2 hover:shadow-lift-lg"
             >
-              <img
-                src={product.image}
-                alt={product.alt}
-                loading="lazy"
-                width={736}
-                height={912}
-                className="mb-5 aspect-[4/5] w-full rounded-2xl object-cover"
-              />
+              <button
+                type="button"
+                onClick={() => setViewing(product)}
+                className="group relative mb-5 block w-full cursor-pointer"
+                aria-label={`View ${product.name} example full size`}
+              >
+                <img
+                  src={product.image}
+                  alt={product.alt}
+                  loading="lazy"
+                  width={736}
+                  height={912}
+                  className="aspect-[4/5] w-full rounded-2xl object-cover"
+                />
+                <span className="absolute inset-x-0 bottom-3 mx-auto w-fit rounded-full bg-foreground px-4 py-1.5 font-display text-sm font-bold text-background opacity-0 shadow-lift transition-opacity group-hover:opacity-100">
+                  View full size
+                </span>
+              </button>
               <div className="flex items-center justify-between">
                 <h3 className="font-display text-2xl font-bold">
                   {product.name}
