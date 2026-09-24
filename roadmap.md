@@ -24,3 +24,7 @@
 - [x] Real slogan in the hero headline: "Better than best" (also in og:title / twitter:title)
 - [x] Replace the four product placeholders with Michael and Tumi's logo, wallpaper, poster and party invite artwork
 - [x] Prices changed at the user's request: logo R50 → R30, party invites R30 → R50 (poster R25, wallpaper R15 unchanged)
+- [x] Logo tiers added from the user's screenshot: Basic R150, Custom R250, Logo + profile picture R350, Premium package R550 (card reads "from R150")
+- [x] Price ranges added for the other three: posters R30–R150, party invites R60–R400, wallpapers R15–R80
+- [x] "View this design" option on every product card — opens the artwork full size with a Close button
+- [x] Poster picture swapped for the user's newer export (748x747, same "Discipline is the best teacher" design) at public/assets/vyra-poster.png
