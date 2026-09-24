@@ -7,17 +7,17 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Vyra Digital — Posters, logos, party invites & wallpapers" },
+      { title: "Vyra Digital — Design & website services" },
       {
         name: "description",
         content:
-          "A tiny South African design studio making digital posters (R30–R150), logos (from R150), party invites (R60–R400) and wallpapers (R15–R80). Pick a price, send a message, get your file.",
+          "A tiny South African studio making websites from R800, digital posters, logos, party invites and wallpapers. Pick an option and send a message to get started.",
       },
       { property: "og:title", content: "Vyra Digital — Better than best" },
       {
         property: "og:description",
         content:
-          "Digital posters R30–R150, logos from R150, party invites R60–R400, wallpapers R15–R80. Handmade in South Africa — just message to order.",
+          "Websites from R800, digital posters R30–R150, logos from R150, party invites R60–R400 and wallpapers R15–R80. Made in South Africa.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -26,7 +26,7 @@ export const Route = createFileRoute("/")({
       {
         name: "twitter:description",
         content:
-          "Digital posters R30–R150, logos from R150, party invites R60–R400, wallpapers R15–R80. Handmade in South Africa — just message to order.",
+          "Websites from R800, digital posters R30–R150, logos from R150, party invites R60–R400 and wallpapers R15–R80. Made in South Africa.",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -127,6 +127,24 @@ const priceRanges = [
   },
 ];
 
+const websiteTiers = [
+  {
+    name: "Basic Website",
+    price: "R800",
+    blurb: "1–2 pages · Simple business site",
+  },
+  {
+    name: "Standard Website",
+    price: "R1,500",
+    blurb: "3–5 pages · Professional business site",
+  },
+  {
+    name: "Premium Website",
+    price: "R2,500+",
+    blurb: "5+ pages · Advanced design and features",
+  },
+];
+
 type Product = (typeof products)[number];
 
 function Index() {
@@ -169,9 +187,9 @@ function Index() {
             Little bits of digital joy, made for you.
           </p>
           <p className="mt-3 max-w-md text-lg leading-relaxed text-muted-foreground">
-            Posters, logos, party invites &amp; wallpapers — hand-made by
+            Websites, posters, logos, party invites &amp; wallpapers — made by
             Michael &amp; Tumi, two very caffeinated designers. No checkout, no
-            fuss: just pick a price, send a note, and you're sorted.
+            fuss: just pick an option, send a note, and you're sorted.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
@@ -265,6 +283,40 @@ function Index() {
               </button>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* website price list */}
+      <section className="mx-auto max-w-6xl px-6 pb-16">
+        <div className="rounded-[2.5rem] border-2 border-border bg-card p-8 shadow-lift sm:p-12">
+          <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+            <h2 className="font-display text-4xl font-bold sm:text-5xl">
+              Website options
+            </h2>
+            <p className="max-w-xs font-display font-semibold text-muted-foreground">
+              Pick the size that fits your idea, then message us to get started.
+            </p>
+          </div>
+          <div className="grid gap-4 lg:grid-cols-3">
+            {websiteTiers.map((tier) => (
+              <div
+                key={tier.name}
+                className="flex min-h-44 flex-col justify-between gap-6 rounded-3xl bg-background p-6"
+              >
+                <div>
+                  <h3 className="font-display text-2xl font-bold">
+                    {tier.name}
+                  </h3>
+                  <p className="mt-2 leading-relaxed text-muted-foreground">
+                    {tier.blurb}
+                  </p>
+                </div>
+                <span className="w-fit -rotate-3 rounded-full bg-primary px-5 py-2 font-display text-xl font-bold text-primary-foreground">
+                  {tier.price}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
