@@ -29,3 +29,4 @@
 - [x] "View this design" option on every product card — opens the artwork full size with a Close button
 - [x] Poster picture swapped for the user's newer export (748x747, same "Discipline is the best teacher" design) at public/assets/vyra-poster.png
 - [x] Website options added: Basic R800 (1–2 pages), Standard R1,500 (3–5 pages), Premium R2,500+ (5+ pages)
+- [x] Logo picture swapped for the user's new VD monogram artwork (752x749, black with white halftone dots) at public/assets/vyra-logo.png
