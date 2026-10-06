@@ -151,24 +151,7 @@ function Index() {
   const [viewing, setViewing] = useState<Product | null>(null);
 
   return (
-    <div className="min-h-screen bg-background font-body text-foreground antialiased overflow-x-hidden">
-      {/* top bar */}
-      <header className="mx-auto flex max-w-6xl items-center justify-between px-6 pt-8">
-        <div className="flex items-center gap-3">
-          <div className="grid size-11 -rotate-6 place-items-center rounded-2xl bg-primary font-display text-xl font-bold text-primary-foreground shadow-lift">
-            V
-          </div>
-          <span className="font-display text-lg font-bold tracking-tight">
-            Vyra Digital
-          </span>
-        </div>
-        <a
-          href="#order"
-          className="hidden items-center gap-2 rounded-full bg-foreground px-5 py-2.5 font-display text-sm font-semibold text-background transition-transform hover:-translate-y-0.5 sm:inline-flex"
-        >
-          Say hi →
-        </a>
-      </header>
+    <div>
 
       {/* hero */}
       <section className="mx-auto grid max-w-6xl items-center gap-10 px-6 pb-10 pt-14 lg:grid-cols-2">
@@ -198,12 +181,12 @@ function Index() {
             >
               Order something
             </a>
-            <a
-              href="#work"
+            <Link
+              to="/creations"
               className="rounded-full border-2 border-foreground px-7 py-3.5 font-display text-lg font-semibold transition-colors hover:bg-foreground hover:text-background"
             >
-              See the work
-            </a>
+              See the creations
+            </Link>
           </div>
           <p className="mt-6 font-display font-semibold text-muted-foreground">
             from <span className="text-2xl text-secondary">R15</span> · friendly
