@@ -142,13 +142,6 @@ function SiteHeader() {
           Home
         </Link>
         <Link
-          to="/creations"
-          className="font-display text-sm font-semibold text-muted-foreground underline-offset-4 transition-colors hover:text-foreground"
-          activeProps={{ className: "font-display text-sm font-semibold text-foreground" }}
-        >
-          Creations
-        </Link>
-        <Link
           to="/"
           hash="order"
           className="hidden items-center gap-2 rounded-full bg-foreground px-5 py-2.5 font-display text-sm font-semibold text-background transition-transform hover:-translate-y-0.5 sm:inline-flex"

@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 
 const heroCollage = "/assets/hero-collage.jpg";
@@ -182,12 +181,12 @@ function Index() {
             >
               Order something
             </a>
-            <Link
-              to="/creations"
+            <a
+              href="#work"
               className="rounded-full border-2 border-foreground px-7 py-3.5 font-display text-lg font-semibold transition-colors hover:bg-foreground hover:text-background"
             >
-              See the creations
-            </Link>
+              See the designs
+            </a>
           </div>
           <p className="mt-6 font-display font-semibold text-muted-foreground">
             from <span className="text-2xl text-secondary">R15</span> · friendly
