@@ -7,7 +7,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { lazy, useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -33,6 +33,8 @@ function NotFoundComponent() {
     </div>
   );
 }
+
+const LazyErrorComponent = lazy(async () => ({ default: ErrorComponent }));
 
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
@@ -103,7 +105,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
-  errorComponent: ErrorComponent,
+  errorComponent: LazyErrorComponent,
 });
 
 function RootShell({ children }: { children: ReactNode }) {
@@ -120,13 +122,68 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+function SiteHeader() {
+  return (
+    <header className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 pt-8">
+      <Link to="/" className="flex items-center gap-3">
+        <div className="grid size-11 -rotate-6 place-items-center rounded-2xl bg-primary font-display text-xl font-bold text-primary-foreground shadow-lift">
+          V
+        </div>
+        <span className="font-display text-lg font-bold tracking-tight">
+          Vyra Digital
+        </span>
+      </Link>
+      <nav className="flex items-center gap-4 sm:gap-6">
+        <Link
+          to="/"
+          className="font-display text-sm font-semibold text-muted-foreground underline-offset-4 transition-colors hover:text-foreground"
+          activeProps={{ className: "font-display text-sm font-semibold text-foreground" }}
+        >
+          Home
+        </Link>
+        <Link
+          to="/creations"
+          className="font-display text-sm font-semibold text-muted-foreground underline-offset-4 transition-colors hover:text-foreground"
+          activeProps={{ className: "font-display text-sm font-semibold text-foreground" }}
+        >
+          Creations
+        </Link>
+        <Link
+          to="/"
+          hash="order"
+          className="hidden items-center gap-2 rounded-full bg-foreground px-5 py-2.5 font-display text-sm font-semibold text-background transition-transform hover:-translate-y-0.5 sm:inline-flex"
+        >
+          Say hi →
+        </Link>
+      </nav>
+    </header>
+  );
+}
+
+function SiteFooter() {
+  return (
+    <footer className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-6 pb-10 text-muted-foreground">
+      <p className="font-display font-semibold">
+        © Vyra Digital · made with too much coffee in SA
+      </p>
+      <p className="text-sm">Prices in South African Rand</p>
+    </footer>
+  );
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <div className="flex min-h-screen flex-col overflow-x-hidden bg-background font-body text-foreground antialiased">
+        <SiteHeader />
+        <main className="flex-1">
+          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+          <Outlet />
+        </main>
+        <SiteFooter />
+      </div>
     </QueryClientProvider>
   );
 }
