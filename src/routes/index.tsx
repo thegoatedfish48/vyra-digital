@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 
 const heroCollage = "/assets/hero-collage.jpg";
@@ -439,13 +440,6 @@ function Index() {
           </div>
         </div>
       </section>
-
-      <footer className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-6 pb-10 text-muted-foreground">
-        <p className="font-display font-semibold">
-          © Vyra Digital · made with too much coffee in SA
-        </p>
-        <p className="text-sm">Prices in South African Rand</p>
-      </footer>
 
       {/* full-size view */}
       {viewing && (
