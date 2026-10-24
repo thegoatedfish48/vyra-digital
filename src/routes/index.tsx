@@ -34,13 +34,13 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-const EMAIL = "thegoatedfish48@gmail.com";
+const EMAIL = "nyamusambamichael@gmail.com";
 const ORDER_NOTE = "Hi Vyra! I'd like to order something.";
 
 const contacts = [
   {
     name: "Michael",
-    email: "thegoatedfish48@gmail.com",
+    email: "nyamusambamichael@gmail.com",
     phone: "069 441 2998",
     whatsapp: `https://wa.me/27694412998?text=${encodeURIComponent(ORDER_NOTE)}`,
   },
@@ -371,6 +371,22 @@ function Index() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* joke of the day */}
+      <section className="mx-auto max-w-6xl px-6 pb-16">
+        <div className="relative overflow-hidden rounded-[2.5rem] border-2 border-border bg-card p-8 shadow-lift sm:p-12">
+          <div className="animate-spin-slow absolute -right-12 -top-12 size-32 rounded-full bg-accent/25" />
+          <span className="relative inline-block -rotate-3 rounded-full bg-accent px-4 py-1.5 font-display text-sm font-bold uppercase tracking-widest text-accent-foreground">
+            Joke of the day
+          </span>
+          <p className="relative mt-5 max-w-3xl font-display text-3xl font-bold leading-tight sm:text-4xl">
+            Why can't presidents fight 1v1 instead of causing war for everyone?
+          </p>
+          <p className="relative mt-4 text-muted-foreground">
+            Just sayin' — one fight, one winner, everybody goes home.
+          </p>
         </div>
       </section>
 

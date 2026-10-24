@@ -17,7 +17,7 @@
 - Custom domain vyra-digital.co.za: connect in Project settings > Domains
 
 ## Done since
-- [x] Emails confirmed and live: thegoatedfish48@gmail.com (primary) + tumi.bepete@gmail.com (second option)
+- [x] Emails confirmed and live: nyamusambamichael@gmail.com (primary) + tumi.bepete@gmail.com (second option)
 - [x] WhatsApp numbers confirmed and live: 069 441 2998 + 079 714 6472, each paired with its email
 - [x] Names confirmed and live: Michael (option 1) + Tumi (option 2), shown above each email/WhatsApp pair
 - [x] Intro copy now names Michael & Tumi; contact block reads "Reach us" / "tell us"
@@ -30,3 +30,5 @@
 - [x] Poster picture swapped for the user's newer export (748x747, same "Discipline is the best teacher" design) at public/assets/vyra-poster.png
 - [x] Website options added: Basic R800 (1–2 pages), Standard R1,500 (3–5 pages), Premium R2,500+ (5+ pages)
 - [x] Logo picture swapped for the user's new VD monogram artwork (752x749, black with white halftone dots) at public/assets/vyra-logo.png
+- [x] Joke of the day added above the contact block: "Why can't presidents fight 1v1 instead of causing war for everyone?"
+- [x] Michael's email changed to nyamusambamichael@gmail.com (was thegoatedfish48@gmail.com) — contact card, mailto and "Start an order" button all updated
