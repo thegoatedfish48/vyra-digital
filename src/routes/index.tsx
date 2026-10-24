@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { HalloweenDecor } from "@/components/HalloweenDecor";
+import { cn } from "@/lib/utils";
 
 const heroCollage = "/assets/hero-collage.jpg";
 
@@ -12,13 +13,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "A tiny South African studio making websites from R800, digital posters, logos, party invites and wallpapers. Pick an option and send a message to get started.",
+          "A tiny South African studio making websites from R680, digital posters, logos, party invites and wallpapers. Pick an option and send a message to get started.",
       },
       { property: "og:title", content: "Vyra Digital — Better than best" },
       {
         property: "og:description",
         content:
-          "Websites from R800, digital posters R30–R150, logos from R150, party invites R60–R400 and wallpapers R15–R80. Made in South Africa.",
+          "Websites from R680, posters R25.50–R127.50, logos from R127.50, invites R51–R340, wallpapers R12.75–R68. 15% off for spooky season.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -27,7 +28,7 @@ export const Route = createFileRoute("/")({
       {
         name: "twitter:description",
         content:
-          "Websites from R800, digital posters R30–R150, logos from R150, party invites R60–R400 and wallpapers R15–R80. Made in South Africa.",
+          "Websites from R680, posters R25.50–R127.50, logos from R127.50, invites R51–R340, wallpapers R12.75–R68. 15% off for spooky season.",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -55,28 +56,28 @@ const contacts = [
 const products = [
   {
     name: "Posters",
-    price: "R30–R150",
+    price: "R25.50–R127.50",
     image: "/assets/vyra-poster.png",
     alt: "Digital poster reading Discipline is the best teacher",
     blurb: "Print-ready or screen-ready. Wall art that actually makes you smile.",
   },
   {
     name: "Logos",
-    price: "from R150",
+    price: "from R127.50",
     image: "/assets/vyra-logo.png",
     alt: "Black and white VD monogram with Vyradigital Better than best by Vyra Digital",
     blurb: "A little mark for your side project, café or brand. Clean and yours.",
   },
   {
     name: "Party invites",
-    price: "R60–R400",
+    price: "R51–R340",
     image: "/assets/vyra-party-invite.png",
     alt: "Pink and charcoal Come to Jakes Awesome 13 party invitation",
     blurb: "Birthdays, braais, baby showers — invites that get people excited.",
   },
   {
     name: "Wallpapers",
-    price: "R15–R80",
+    price: "R12.75–R68",
     image: "/assets/vyra-wallpaper.png",
     alt: "Purple Coming Soon typographic wallpaper on black",
     blurb:
@@ -87,22 +88,22 @@ const products = [
 const logoTiers = [
   {
     name: "Basic logo",
-    price: "R150",
+    price: "R127.50",
     blurb: "One clean, simple logo. Perfect for getting started.",
   },
   {
     name: "Custom logo",
-    price: "R250",
+    price: "R212.50",
     blurb: "Made from scratch around your idea, name and colours.",
   },
   {
     name: "Premium logo package",
-    price: "R550",
+    price: "R467.50",
     blurb: "The full works — versions, variations and files for everywhere.",
   },
   {
     name: "Logo + profile picture",
-    price: "R350",
+    price: "R297.50",
     blurb: "A logo plus a matching profile pic for your socials.",
   },
 ];
@@ -110,38 +111,38 @@ const logoTiers = [
 const priceRanges = [
   {
     name: "Poster prices",
-    range: "R30 – R150",
+    range: "R25.50 – R127.50",
     blurb:
-      "A simple, clean design starts at R30. Bigger, more detailed custom posters go up to R150.",
+      "A simple, clean design starts at R25.50. Bigger, more detailed custom posters go up to R127.50.",
   },
   {
     name: "Party invite prices",
-    range: "R60 – R400",
+    range: "R51 – R340",
     blurb:
-      "A fun single invite starts at R60. Fully custom, themed invite sets go up to R400.",
+      "A fun single invite starts at R51. Fully custom, themed invite sets go up to R340.",
   },
   {
     name: "Wallpaper prices",
-    range: "R15 – R80",
+    range: "R12.75 – R68",
     blurb:
-      "A fresh ready-made wallpaper is R15. Something custom-made just for you goes up to R80.",
+      "A fresh ready-made wallpaper is R12.75. Something custom-made just for you goes up to R68.",
   },
 ];
 
 const websiteTiers = [
   {
     name: "Basic Website",
-    price: "R800",
+    price: "R680",
     blurb: "1–2 pages · Simple business site",
   },
   {
     name: "Standard Website",
-    price: "R1,500",
+    price: "R1,275",
     blurb: "3–5 pages · Professional business site",
   },
   {
     name: "Premium Website",
-    price: "R2,500+",
+    price: "R2,125+",
     blurb: "5+ pages · Advanced design and features",
   },
 ];
