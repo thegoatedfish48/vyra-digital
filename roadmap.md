@@ -30,3 +30,5 @@
 - [x] Poster picture swapped for the user's newer export (748x747, same "Discipline is the best teacher" design) at public/assets/vyra-poster.png
 - [x] Website options added: Basic R800 (1–2 pages), Standard R1,500 (3–5 pages), Premium R2,500+ (5+ pages)
 - [x] Logo picture swapped for the user's new VD monogram artwork (752x749, black with white halftone dots) at public/assets/vyra-logo.png
+- [x] Joke of the day added above the contact block: "Why can't presidents fight 1v1 instead of causing war for everyone?"
+- [x] Michael's email changed to nyamusambamichael@gmail.com (was thegoatedfish48@gmail.com) — contact card, mailto and "Start an order" button all updated
