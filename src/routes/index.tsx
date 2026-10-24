@@ -151,19 +151,20 @@ function Index() {
   const [viewing, setViewing] = useState<Product | null>(null);
 
   return (
-    <div>
+    <div className="relative overflow-x-hidden">
+      <HalloweenDecor />
 
       {/* hero */}
-      <section className="mx-auto grid max-w-6xl items-center gap-10 px-6 pb-10 pt-14 lg:grid-cols-2">
+      <section className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 pb-10 pt-14 lg:grid-cols-2">
         <div>
-          <span className="inline-flex -rotate-2 items-center gap-2 rounded-full bg-accent px-4 py-1.5 font-display text-sm font-semibold shadow-lift">
-            A tiny studio in South Africa ✦
+          <span className="inline-flex -rotate-2 items-center gap-2 rounded-full bg-accent px-4 py-1.5 font-display text-sm font-semibold text-accent-foreground shadow-lift">
+            🎃 Spooky season at Vyra Digital 👻
           </span>
           <h1 className="mt-6 font-display text-6xl font-bold leading-[0.92] sm:text-7xl">
             Better than{" "}
-            <span className="relative inline-block">
+            <span className="relative inline-block text-primary-foreground">
               <span className="relative z-10">best</span>
-              <span className="absolute inset-x-[-0.3em] top-[-0.18em] bottom-[-0.18em] -rotate-2 rounded-lg bg-accent" />
+              <span className="absolute inset-x-[-0.3em] top-[-0.18em] bottom-[-0.18em] -rotate-2 rounded-lg bg-primary" />
             </span>
           </h1>
           <p className="mt-5 font-display text-xl font-semibold text-foreground">
