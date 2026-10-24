@@ -17,7 +17,7 @@
 - Custom domain vyra-digital.co.za: connect in Project settings > Domains
 
 ## Done since
-- [x] Emails confirmed and live: thegoatedfish48@gmail.com (primary) + tumi.bepete@gmail.com (second option)
+- [x] Emails confirmed and live: nyamusambamichael@gmail.com (primary) + tumi.bepete@gmail.com (second option)
 - [x] WhatsApp numbers confirmed and live: 069 441 2998 + 079 714 6472, each paired with its email
 - [x] Names confirmed and live: Michael (option 1) + Tumi (option 2), shown above each email/WhatsApp pair
 - [x] Intro copy now names Michael & Tumi; contact block reads "Reach us" / "tell us"

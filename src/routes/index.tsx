@@ -34,13 +34,13 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-const EMAIL = "thegoatedfish48@gmail.com";
+const EMAIL = "nyamusambamichael@gmail.com";
 const ORDER_NOTE = "Hi Vyra! I'd like to order something.";
 
 const contacts = [
   {
     name: "Michael",
-    email: "thegoatedfish48@gmail.com",
+    email: "nyamusambamichael@gmail.com",
     phone: "069 441 2998",
     whatsapp: `https://wa.me/27694412998?text=${encodeURIComponent(ORDER_NOTE)}`,
   },
