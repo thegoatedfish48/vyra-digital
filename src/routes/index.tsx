@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { HalloweenDecor } from "@/components/HalloweenDecor";
+import { cn } from "@/lib/utils";
 
 const heroCollage = "/assets/hero-collage.jpg";
 
@@ -12,13 +13,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "A tiny South African studio making websites from R800, digital posters, logos, party invites and wallpapers. Pick an option and send a message to get started.",
+          "A tiny South African studio making websites from R680, digital posters, logos, party invites and wallpapers. Pick an option and send a message to get started.",
       },
       { property: "og:title", content: "Vyra Digital — Better than best" },
       {
         property: "og:description",
         content:
-          "Websites from R800, digital posters R30–R150, logos from R150, party invites R60–R400 and wallpapers R15–R80. Made in South Africa.",
+          "Websites from R680, posters R25.50–R127.50, logos from R127.50, invites R51–R340, wallpapers R12.75–R68. 15% off for spooky season.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -27,7 +28,7 @@ export const Route = createFileRoute("/")({
       {
         name: "twitter:description",
         content:
-          "Websites from R800, digital posters R30–R150, logos from R150, party invites R60–R400 and wallpapers R15–R80. Made in South Africa.",
+          "Websites from R680, posters R25.50–R127.50, logos from R127.50, invites R51–R340, wallpapers R12.75–R68. 15% off for spooky season.",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -55,28 +56,28 @@ const contacts = [
 const products = [
   {
     name: "Posters",
-    price: "R30–R150",
+    price: "R25.50–R127.50",
     image: "/assets/vyra-poster.png",
     alt: "Digital poster reading Discipline is the best teacher",
     blurb: "Print-ready or screen-ready. Wall art that actually makes you smile.",
   },
   {
     name: "Logos",
-    price: "from R150",
+    price: "from R127.50",
     image: "/assets/vyra-logo.png",
     alt: "Black and white VD monogram with Vyradigital Better than best by Vyra Digital",
     blurb: "A little mark for your side project, café or brand. Clean and yours.",
   },
   {
     name: "Party invites",
-    price: "R60–R400",
+    price: "R51–R340",
     image: "/assets/vyra-party-invite.png",
     alt: "Pink and charcoal Come to Jakes Awesome 13 party invitation",
     blurb: "Birthdays, braais, baby showers — invites that get people excited.",
   },
   {
     name: "Wallpapers",
-    price: "R15–R80",
+    price: "R12.75–R68",
     image: "/assets/vyra-wallpaper.png",
     alt: "Purple Coming Soon typographic wallpaper on black",
     blurb:
@@ -87,22 +88,22 @@ const products = [
 const logoTiers = [
   {
     name: "Basic logo",
-    price: "R150",
+    price: "R127.50",
     blurb: "One clean, simple logo. Perfect for getting started.",
   },
   {
     name: "Custom logo",
-    price: "R250",
+    price: "R212.50",
     blurb: "Made from scratch around your idea, name and colours.",
   },
   {
     name: "Premium logo package",
-    price: "R550",
+    price: "R467.50",
     blurb: "The full works — versions, variations and files for everywhere.",
   },
   {
     name: "Logo + profile picture",
-    price: "R350",
+    price: "R297.50",
     blurb: "A logo plus a matching profile pic for your socials.",
   },
 ];
@@ -110,43 +111,56 @@ const logoTiers = [
 const priceRanges = [
   {
     name: "Poster prices",
-    range: "R30 – R150",
+    range: "R25.50 – R127.50",
     blurb:
-      "A simple, clean design starts at R30. Bigger, more detailed custom posters go up to R150.",
+      "A simple, clean design starts at R25.50. Bigger, more detailed custom posters go up to R127.50.",
   },
   {
     name: "Party invite prices",
-    range: "R60 – R400",
+    range: "R51 – R340",
     blurb:
-      "A fun single invite starts at R60. Fully custom, themed invite sets go up to R400.",
+      "A fun single invite starts at R51. Fully custom, themed invite sets go up to R340.",
   },
   {
     name: "Wallpaper prices",
-    range: "R15 – R80",
+    range: "R12.75 – R68",
     blurb:
-      "A fresh ready-made wallpaper is R15. Something custom-made just for you goes up to R80.",
+      "A fresh ready-made wallpaper is R12.75. Something custom-made just for you goes up to R68.",
   },
 ];
 
 const websiteTiers = [
   {
     name: "Basic Website",
-    price: "R800",
+    price: "R680",
     blurb: "1–2 pages · Simple business site",
   },
   {
     name: "Standard Website",
-    price: "R1,500",
+    price: "R1,275",
     blurb: "3–5 pages · Professional business site",
   },
   {
     name: "Premium Website",
-    price: "R2,500+",
+    price: "R2,125+",
     blurb: "5+ pages · Advanced design and features",
   },
 ];
 
 type Product = (typeof products)[number];
+
+function DiscountTag({ className }: { className?: string }) {
+  return (
+    <span
+      className={cn(
+        "-rotate-6 rounded-full bg-accent px-2.5 py-1 font-display text-[0.7rem] font-bold uppercase tracking-wide text-accent-foreground shadow-lift",
+        className,
+      )}
+    >
+      -15%
+    </span>
+  );
+}
 
 function Index() {
   const [viewing, setViewing] = useState<Product | null>(null);
@@ -159,7 +173,7 @@ function Index() {
       <section className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 pb-10 pt-14 lg:grid-cols-2">
         <div>
           <span className="inline-flex -rotate-2 items-center gap-2 rounded-full bg-accent px-4 py-1.5 font-display text-sm font-semibold text-accent-foreground shadow-lift">
-            🎃 Spooky season at Vyra Digital 👻
+            🎃 15% off everything while spooky season lasts 👻
           </span>
           <h1 className="mt-6 font-display text-6xl font-bold leading-[0.92] sm:text-7xl">
             Better than{" "}
@@ -190,9 +204,12 @@ function Index() {
               See the designs
             </a>
           </div>
-          <p className="mt-6 font-display font-semibold text-muted-foreground">
-            from <span className="text-2xl text-secondary">R15</span> · friendly
-            to friends &amp; family
+          <p className="mt-6 flex flex-wrap items-center gap-x-3 font-display font-semibold text-muted-foreground">
+            <span>
+              from <span className="text-2xl text-secondary">R12.75</span> ·
+              friendly to friends &amp; family
+            </span>
+            <DiscountTag />
           </p>
         </div>
 
@@ -204,8 +221,8 @@ function Index() {
             height={1024}
             className="aspect-square w-full rounded-[2.5rem] object-cover"
           />
-          <div className="animate-floaty absolute -left-4 -top-5 grid size-16 place-items-center rounded-full bg-secondary font-display font-bold text-secondary-foreground shadow-lift">
-            R15
+          <div className="animate-floaty absolute -left-4 -top-5 grid size-16 place-items-center rounded-full bg-secondary font-display text-sm font-bold text-secondary-foreground shadow-lift">
+            R12.75
           </div>
           <div className="animate-spin-slow absolute -bottom-4 -right-3 grid size-20 place-items-center rounded-full bg-primary text-center font-display text-xs font-bold leading-tight text-primary-foreground shadow-lift">
             say hi!
@@ -248,13 +265,16 @@ function Index() {
                   View full size
                 </span>
               </button>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between gap-3">
                 <h3 className="font-display text-2xl font-bold">
                   {product.name}
                 </h3>
-                <span className="-rotate-3 rounded-full bg-primary px-4 py-1.5 font-display text-lg font-bold text-primary-foreground">
-                  {product.price}
-                </span>
+                <div className="relative shrink-0">
+                  <span className="-rotate-3 rounded-full bg-primary px-4 py-1.5 font-display text-lg font-bold text-primary-foreground">
+                    {product.price}
+                  </span>
+                  <DiscountTag className="absolute -right-2 -top-3" />
+                </div>
               </div>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 {product.blurb}
@@ -296,9 +316,12 @@ function Index() {
                     {tier.blurb}
                   </p>
                 </div>
-                <span className="w-fit -rotate-3 rounded-full bg-primary px-5 py-2 font-display text-xl font-bold text-primary-foreground">
-                  {tier.price}
-                </span>
+                <div className="relative w-fit">
+                  <span className="-rotate-3 rounded-full bg-primary px-5 py-2 font-display text-xl font-bold text-primary-foreground">
+                    {tier.price}
+                  </span>
+                  <DiscountTag className="absolute -right-2 -top-3" />
+                </div>
               </div>
             ))}
           </div>
@@ -330,9 +353,12 @@ function Index() {
                     {tier.blurb}
                   </p>
                 </div>
-                <span className="shrink-0 -rotate-3 rounded-full bg-secondary px-4 py-1.5 font-display text-lg font-bold text-secondary-foreground">
-                  {tier.price}
-                </span>
+                <div className="relative shrink-0">
+                  <span className="-rotate-3 rounded-full bg-secondary px-4 py-1.5 font-display text-lg font-bold text-secondary-foreground">
+                    {tier.price}
+                  </span>
+                  <DiscountTag className="absolute -right-2 -top-3" />
+                </div>
               </div>
             ))}
           </div>
@@ -365,9 +391,12 @@ function Index() {
                     {item.blurb}
                   </p>
                 </div>
-                <span className="w-fit -rotate-3 rounded-full bg-secondary px-4 py-1.5 font-display text-lg font-bold text-secondary-foreground">
-                  {item.range}
-                </span>
+                <div className="relative w-fit">
+                  <span className="-rotate-3 rounded-full bg-secondary px-4 py-1.5 font-display text-lg font-bold text-secondary-foreground">
+                    {item.range}
+                  </span>
+                  <DiscountTag className="absolute -right-2 -top-3" />
+                </div>
               </div>
             ))}
           </div>
@@ -481,8 +510,9 @@ function Index() {
                 <h3 className="font-display text-2xl font-bold">
                   {viewing.name}
                 </h3>
-                <p className="font-display text-lg font-semibold text-primary">
+                <p className="flex items-center gap-2 font-display text-lg font-semibold text-primary">
                   {viewing.price}
+                  <DiscountTag />
                 </p>
               </div>
               <button
