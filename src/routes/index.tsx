@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { HalloweenDecor } from "@/components/HalloweenDecor";
 
 const heroCollage = "/assets/hero-collage.jpg";
 
