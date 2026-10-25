@@ -32,3 +32,4 @@
 - [x] Logo picture swapped for the user's new VD monogram artwork (752x749, black with white halftone dots) at public/assets/vyra-logo.png
 - [x] Joke of the day added above the contact block: "Why can't presidents fight 1v1 instead of causing war for everyone?"
 - [x] Michael's email changed to nyamusambamichael@gmail.com (was thegoatedfish48@gmail.com) — contact card, mailto and "Start an order" button all updated
+- [x] 15% discount messaging removed (all "-15%" tags, the hero "15% off" claim and the meta descriptions) — the discounted prices stay exactly as they were
