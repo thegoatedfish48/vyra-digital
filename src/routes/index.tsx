@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { HalloweenDecor } from "@/components/HalloweenDecor";
-import { cn } from "@/lib/utils";
 
 const heroCollage = "/assets/hero-collage.jpg";
 
@@ -19,7 +18,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Websites from R680, posters R25.50–R127.50, logos from R127.50, invites R51–R340, wallpapers R12.75–R68. 15% off for spooky season.",
+          "Websites from R680, posters R25.50–R127.50, logos from R127.50, invites R51–R340, wallpapers R12.75–R68.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -28,7 +27,7 @@ export const Route = createFileRoute("/")({
       {
         name: "twitter:description",
         content:
-          "Websites from R680, posters R25.50–R127.50, logos from R127.50, invites R51–R340, wallpapers R12.75–R68. 15% off for spooky season.",
+          "Websites from R680, posters R25.50–R127.50, logos from R127.50, invites R51–R340, wallpapers R12.75–R68.",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -149,18 +148,6 @@ const websiteTiers = [
 
 type Product = (typeof products)[number];
 
-function DiscountTag({ className }: { className?: string }) {
-  return (
-    <span
-      className={cn(
-        "-rotate-6 rounded-full bg-accent px-2.5 py-1 font-display text-[0.7rem] font-bold uppercase tracking-wide text-accent-foreground shadow-lift",
-        className,
-      )}
-    >
-      -15%
-    </span>
-  );
-}
 
 function Index() {
   const [viewing, setViewing] = useState<Product | null>(null);
@@ -173,7 +160,7 @@ function Index() {
       <section className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 pb-10 pt-14 lg:grid-cols-2">
         <div>
           <span className="inline-flex -rotate-2 items-center gap-2 rounded-full bg-accent px-4 py-1.5 font-display text-sm font-semibold text-accent-foreground shadow-lift">
-            🎃 15% off everything while spooky season lasts 👻
+            🎃 Spooky season at Vyra Digital 👻
           </span>
           <h1 className="mt-6 font-display text-6xl font-bold leading-[0.92] sm:text-7xl">
             Better than{" "}
@@ -209,7 +196,6 @@ function Index() {
               from <span className="text-2xl text-secondary">R12.75</span> ·
               friendly to friends &amp; family
             </span>
-            <DiscountTag />
           </p>
         </div>
 
@@ -273,7 +259,6 @@ function Index() {
                   <span className="-rotate-3 rounded-full bg-primary px-4 py-1.5 font-display text-lg font-bold text-primary-foreground">
                     {product.price}
                   </span>
-                  <DiscountTag className="absolute -right-2 -top-3" />
                 </div>
               </div>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -320,7 +305,6 @@ function Index() {
                   <span className="-rotate-3 rounded-full bg-primary px-5 py-2 font-display text-xl font-bold text-primary-foreground">
                     {tier.price}
                   </span>
-                  <DiscountTag className="absolute -right-2 -top-3" />
                 </div>
               </div>
             ))}
@@ -357,7 +341,6 @@ function Index() {
                   <span className="-rotate-3 rounded-full bg-secondary px-4 py-1.5 font-display text-lg font-bold text-secondary-foreground">
                     {tier.price}
                   </span>
-                  <DiscountTag className="absolute -right-2 -top-3" />
                 </div>
               </div>
             ))}
@@ -395,7 +378,6 @@ function Index() {
                   <span className="-rotate-3 rounded-full bg-secondary px-4 py-1.5 font-display text-lg font-bold text-secondary-foreground">
                     {item.range}
                   </span>
-                  <DiscountTag className="absolute -right-2 -top-3" />
                 </div>
               </div>
             ))}
@@ -512,7 +494,6 @@ function Index() {
                 </h3>
                 <p className="flex items-center gap-2 font-display text-lg font-semibold text-primary">
                   {viewing.price}
-                  <DiscountTag />
                 </p>
               </div>
               <button
