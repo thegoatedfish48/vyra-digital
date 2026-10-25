@@ -201,9 +201,6 @@ function Index() {
             height={1024}
             className="aspect-square w-full rounded-[2.5rem] object-cover"
           />
-          <div className="animate-floaty absolute -left-4 -top-5 grid size-16 place-items-center rounded-full bg-secondary font-display text-sm font-bold text-secondary-foreground shadow-lift">
-            R12.75
-          </div>
           <div className="animate-spin-slow absolute -bottom-4 -right-3 grid size-20 place-items-center rounded-full bg-primary text-center font-display text-xs font-bold leading-tight text-primary-foreground shadow-lift">
             say hi!
           </div>
