@@ -191,12 +191,6 @@ function Index() {
               See the designs
             </a>
           </div>
-          <p className="mt-6 flex flex-wrap items-center gap-x-3 font-display font-semibold text-muted-foreground">
-            <span>
-              from <span className="text-2xl text-secondary">R12.75</span> ·
-              friendly to friends &amp; family
-            </span>
-          </p>
         </div>
 
         <div className="relative">
