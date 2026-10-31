@@ -35,3 +35,4 @@
 - [x] 15% discount messaging removed (all "-15%" tags, the hero "15% off" claim and the meta descriptions) — the discounted prices stay exactly as they were
 - [x] Removed the "from R12.75 · friendly to friends & family" line under the hero buttons
 - [x] Removed the round R12.75 sticker from the corner of the hero photo (the "say hi!" sticker stays)
+- Halloween theme: black/orange/purple palette, floating ghosts + glowing jack-o-lanterns (Oct 31)
