@@ -384,10 +384,10 @@ function Index() {
             Joke of the day
           </span>
           <p className="relative mt-5 max-w-3xl font-display text-3xl font-bold leading-tight sm:text-4xl">
-            Why can't presidents fight 1v1 instead of causing war for everyone?
+            Why do cows wear bells?
           </p>
           <p className="relative mt-4 text-muted-foreground">
-            Just sayin' — one fight, one winner, everybody goes home.
+            Because their horns don't work!
           </p>
         </div>
       </section>
