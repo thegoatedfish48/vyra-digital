@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { HalloweenDecor } from "@/components/HalloweenDecor";
+import {
+  applyBlackNovemberDiscount,
+  BLACK_NOVEMBER_DISCOUNT_PERCENT,
+} from "@/lib/pricing";
 
 const heroCollage = "/assets/hero-collage.jpg";
 
@@ -12,13 +15,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "A tiny South African studio making websites from R680, digital posters, logos, party invites and wallpapers. Pick an option and send a message to get started.",
+          "Black November: save 30% on websites, posters, logos, party invites and wallpapers from Vyra Digital. Made in South Africa.",
       },
       { property: "og:title", content: "Vyra Digital — Better than best" },
       {
         property: "og:description",
         content:
-          "Websites from R680, posters R25.50–R127.50, logos from R127.50, invites R51–R340, wallpapers R12.75–R68.",
+          "Black November: 30% off. Websites from R476, posters R17.85–R89.25, logos from R89.25, invites R35.70–R238, wallpapers R8.93–R47.60.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -27,7 +30,7 @@ export const Route = createFileRoute("/")({
       {
         name: "twitter:description",
         content:
-          "Websites from R680, posters R25.50–R127.50, logos from R127.50, invites R51–R340, wallpapers R12.75–R68.",
+          "Black November: 30% off. Websites from R476, posters R17.85–R89.25, logos from R89.25, invites R35.70–R238, wallpapers R8.93–R47.60.",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -36,6 +39,27 @@ export const Route = createFileRoute("/")({
 
 const EMAIL = "nyamusambamichael@gmail.com";
 const ORDER_NOTE = "Hi Vyra! I'd like to order something.";
+
+function SalePrice({ price, size = "regular" }: { price: string; size?: "regular" | "large" }) {
+  return (
+    <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+      <span className={size === "large" ? "rounded-md bg-gold-gradient px-4 py-2 font-display text-xl font-bold text-primary-foreground shadow-gold" : "rounded-md bg-gold-gradient px-3 py-1.5 font-display text-base font-bold text-primary-foreground shadow-gold"}>
+        {applyBlackNovemberDiscount(price)}
+      </span>
+      <span className="text-sm text-muted-foreground line-through decoration-primary/80">
+        {price}
+      </span>
+    </div>
+  );
+}
+
+function SaleBadge({ compact = false }: { compact?: boolean }) {
+  return (
+    <span className={`inline-flex items-center rounded-sm border border-primary/60 bg-primary/10 font-display font-bold uppercase text-primary shadow-gold ${compact ? "px-2 py-1 text-[0.65rem]" : "px-3 py-1.5 text-xs"}`}>
+      {compact ? `${BLACK_NOVEMBER_DISCOUNT_PERCENT}% OFF` : `SALE · ${BLACK_NOVEMBER_DISCOUNT_PERCENT}% OFF`}
+    </span>
+  );
+}
 
 const contacts = [
   {
@@ -112,19 +136,19 @@ const priceRanges = [
     name: "Poster prices",
     range: "R25.50 – R127.50",
     blurb:
-      "A simple, clean design starts at R25.50. Bigger, more detailed custom posters go up to R127.50.",
+      "Save 30% on a simple, clean design or a bigger, detailed custom poster.",
   },
   {
     name: "Party invite prices",
     range: "R51 – R340",
     blurb:
-      "A fun single invite starts at R51. Fully custom, themed invite sets go up to R340.",
+      "Save 30% on a fun single invite or a fully custom, themed invite set.",
   },
   {
     name: "Wallpaper prices",
     range: "R12.75 – R68",
     blurb:
-      "A fresh ready-made wallpaper is R12.75. Something custom-made just for you goes up to R68.",
+      "Save 30% on a fresh ready-made wallpaper or a custom-made design.",
   },
 ];
 
@@ -154,23 +178,22 @@ function Index() {
 
   return (
     <div className="relative overflow-x-hidden">
-      <HalloweenDecor />
-
       {/* hero */}
       <section className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 pb-10 pt-14 lg:grid-cols-2">
         <div>
-          <span className="inline-flex -rotate-2 items-center gap-2 rounded-full bg-accent px-4 py-1.5 font-display text-sm font-semibold text-accent-foreground shadow-lift">
-            🎃 Spooky season at Vyra Digital 👻
-          </span>
+          <div className="mb-7 inline-flex flex-wrap items-center gap-3 border-y border-primary/35 py-3 pr-5">
+            <SaleBadge />
+            <span className="font-display text-sm font-semibold uppercase text-muted-foreground">Black November at Vyra Digital</span>
+          </div>
           <h1 className="mt-6 font-display text-6xl font-bold leading-[0.92] sm:text-7xl">
             Better than{" "}
             <span className="relative inline-block text-primary-foreground">
               <span className="relative z-10">best</span>
-              <span className="absolute inset-x-[-0.3em] top-[-0.18em] bottom-[-0.18em] -rotate-2 rounded-lg bg-primary" />
+              <span className="absolute inset-x-[-0.3em] top-[-0.18em] bottom-[-0.18em] -rotate-2 rounded-lg bg-gold-gradient shadow-gold" />
             </span>
           </h1>
-          <p className="mt-5 font-display text-xl font-semibold text-foreground">
-            Little bits of digital joy, made for you.
+          <p className="mt-5 font-display text-xl font-semibold text-primary">
+            30% off every design and website.
           </p>
           <p className="mt-3 max-w-md text-lg leading-relaxed text-muted-foreground">
             Websites, posters, logos, party invites &amp; wallpapers — made by
@@ -199,9 +222,9 @@ function Index() {
             alt="A collage of Vyra Digital products: a poster, a logo badge, a party invite and a phone wallpaper"
             width={1024}
             height={1024}
-            className="aspect-square w-full rounded-[2.5rem] object-cover"
+            className="aspect-square w-full rounded-xl border border-primary/25 object-cover shadow-gold"
           />
-          <div className="animate-spin-slow absolute -bottom-4 -right-3 grid size-20 place-items-center rounded-full bg-primary text-center font-display text-xs font-bold leading-tight text-primary-foreground shadow-lift">
+          <div className="absolute -bottom-4 -right-3 grid size-20 place-items-center rounded-full bg-gold-gradient text-center font-display text-xs font-bold leading-tight text-primary-foreground shadow-gold">
             say hi!
           </div>
         </div>
@@ -222,7 +245,7 @@ function Index() {
           {products.map((product) => (
             <div
               key={product.name}
-              className="rounded-3xl border-2 border-border bg-card p-6 shadow-lift transition-all hover:-translate-y-2 hover:shadow-lift-lg"
+              className="rounded-xl border border-border bg-card p-5 shadow-lift transition-all hover:-translate-y-1 hover:border-primary/60 hover:shadow-gold"
             >
               <button
                 type="button"
@@ -238,19 +261,16 @@ function Index() {
                   height={912}
                   className="aspect-[4/5] w-full rounded-2xl object-cover"
                 />
-                <span className="absolute inset-x-0 bottom-3 mx-auto w-fit rounded-full bg-foreground px-4 py-1.5 font-display text-sm font-bold text-background opacity-0 shadow-lift transition-opacity group-hover:opacity-100">
+                <span className="absolute left-3 top-3"><SaleBadge compact /></span>
+                <span className="absolute inset-x-0 bottom-3 mx-auto w-fit rounded-md bg-foreground px-4 py-1.5 font-display text-sm font-bold text-background opacity-0 shadow-lift transition-opacity group-hover:opacity-100">
                   View full size
                 </span>
               </button>
-              <div className="flex items-center justify-between gap-3">
+              <div className="flex flex-col items-start gap-3">
                 <h3 className="font-display text-2xl font-bold">
                   {product.name}
                 </h3>
-                <div className="relative shrink-0">
-                  <span className="-rotate-3 rounded-full bg-primary px-4 py-1.5 font-display text-lg font-bold text-primary-foreground">
-                    {product.price}
-                  </span>
-                </div>
+                <SalePrice price={product.price} />
               </div>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 {product.blurb}
@@ -282,7 +302,7 @@ function Index() {
             {websiteTiers.map((tier) => (
               <div
                 key={tier.name}
-                className="flex min-h-44 flex-col justify-between gap-6 rounded-3xl bg-background p-6"
+                className="flex min-h-44 flex-col justify-between gap-6 rounded-lg border border-border bg-background p-6"
               >
                 <div>
                   <h3 className="font-display text-2xl font-bold">
@@ -293,9 +313,7 @@ function Index() {
                   </p>
                 </div>
                 <div className="relative w-fit">
-                  <span className="-rotate-3 rounded-full bg-primary px-5 py-2 font-display text-xl font-bold text-primary-foreground">
-                    {tier.price}
-                  </span>
+                  <SalePrice price={tier.price} size="large" />
                 </div>
               </div>
             ))}
@@ -318,7 +336,7 @@ function Index() {
             {logoTiers.map((tier) => (
               <div
                 key={tier.name}
-                className="flex items-center justify-between gap-4 rounded-3xl bg-background p-6"
+                className="flex items-center justify-between gap-4 rounded-lg border border-border bg-background p-6"
               >
                 <div>
                   <h3 className="font-display text-xl font-bold">
@@ -329,9 +347,7 @@ function Index() {
                   </p>
                 </div>
                 <div className="relative shrink-0">
-                  <span className="-rotate-3 rounded-full bg-secondary px-4 py-1.5 font-display text-lg font-bold text-secondary-foreground">
-                    {tier.price}
-                  </span>
+                  <SalePrice price={tier.price} />
                 </div>
               </div>
             ))}
@@ -355,7 +371,7 @@ function Index() {
             {priceRanges.map((item) => (
               <div
                 key={item.name}
-                className="flex flex-col gap-4 rounded-3xl bg-background p-6"
+                className="flex flex-col gap-4 rounded-lg border border-border bg-background p-6"
               >
                 <div>
                   <h3 className="font-display text-xl font-bold">
@@ -366,9 +382,7 @@ function Index() {
                   </p>
                 </div>
                 <div className="relative w-fit">
-                  <span className="-rotate-3 rounded-full bg-secondary px-4 py-1.5 font-display text-lg font-bold text-secondary-foreground">
-                    {item.range}
-                  </span>
+                  <SalePrice price={item.range} />
                 </div>
               </div>
             ))}
@@ -483,9 +497,7 @@ function Index() {
                 <h3 className="font-display text-2xl font-bold">
                   {viewing.name}
                 </h3>
-                <p className="flex items-center gap-2 font-display text-lg font-semibold text-primary">
-                  {viewing.price}
-                </p>
+                <div className="mt-2"><SalePrice price={viewing.price} /></div>
               </div>
               <button
                 type="button"
