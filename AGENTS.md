@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep seasonal discount arithmetic and Rand price formatting in `src/lib/pricing.ts` so every price display stays consistent.

@@ -36,3 +36,4 @@
 - [x] Removed the "from R12.75 · friendly to friends & family" line under the hero buttons
 - [x] Removed the round R12.75 sticker from the corner of the hero photo (the "say hi!" sticker stays)
 - Halloween theme: black/orange/purple palette, floating ghosts + glowing jack-o-lanterns (Oct 31)
+- [ ] Replace Halloween visuals with the Black November black/charcoal/white/metallic-gold theme and apply the confirmed 30% discount to all existing prices.
