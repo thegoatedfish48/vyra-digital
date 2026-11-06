@@ -48,29 +48,27 @@
 
 :root {
   --radius: 1rem;
-  --background: oklch(0.14 0.02 300);
-  --foreground: oklch(0.96 0.02 85);
-  --card: oklch(0.19 0.03 300);
-  --card-foreground: oklch(0.96 0.02 85);
-  --popover: oklch(0.19 0.03 300);
-  --popover-foreground: oklch(0.96 0.02 85);
-  --primary: oklch(0.72 0.19 55);
-  --primary-foreground: oklch(0.16 0.03 300);
-  --secondary: oklch(0.55 0.22 300);
-  --secondary-foreground: oklch(0.96 0.02 85);
-  --muted: oklch(0.22 0.03 300);
-  --muted-foreground: oklch(0.96 0.02 85 / 70%);
-  --accent: oklch(0.68 0.24 305);
-  --accent-foreground: oklch(0.96 0.02 85);
+  --background: oklch(0.12 0.004 85);
+  --foreground: oklch(0.97 0.008 85);
+  --card: oklch(0.18 0.006 85);
+  --card-foreground: oklch(0.97 0.008 85);
+  --popover: oklch(0.18 0.006 85);
+  --popover-foreground: oklch(0.97 0.008 85);
+  --primary: oklch(0.78 0.15 82);
+  --primary-foreground: oklch(0.14 0.008 75);
+  --secondary: oklch(0.28 0.008 85);
+  --secondary-foreground: oklch(0.97 0.008 85);
+  --muted: oklch(0.23 0.007 85);
+  --muted-foreground: oklch(0.77 0.012 85);
+  --accent: oklch(0.87 0.12 84);
+  --accent-foreground: oklch(0.14 0.008 75);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.96 0.02 85 / 15%);
-  --input: oklch(0.96 0.02 85 / 15%);
-  --ring: oklch(0.72 0.19 55);
-  --ghost: oklch(0.97 0.01 85);
-  --ghost-ink: oklch(0.16 0.03 300);
-  --pumpkin-stem: oklch(0.5 0.13 140);
-  --font-family-display: "Fredoka", sans-serif;
+  --border: oklch(0.78 0.15 82 / 22%);
+  --input: oklch(0.78 0.15 82 / 30%);
+  --ring: oklch(0.78 0.15 82);
+  --gold-gradient: linear-gradient(135deg, oklch(0.87 0.12 84), oklch(0.68 0.14 72));
+  --font-family-display: "DM Serif Display", serif;
   --font-family-body: "DM Sans", sans-serif;
 }
 
@@ -86,34 +84,28 @@
   }
 }
 
-@keyframes floaty {
-  0%,
-  100% {
-    transform: translateY(0) rotate(-8deg);
-  }
-  50% {
-    transform: translateY(-14px) rotate(6deg);
-  }
-}
-
 @keyframes spin-slow {
   to {
     transform: rotate(360deg);
   }
 }
 
-@utility animate-floaty {
-  animation: floaty 5s ease-in-out infinite;
-}
-
 @utility animate-spin-slow {
   animation: spin-slow 22s linear infinite;
 }
 
+@utility bg-gold-gradient {
+  background-image: var(--gold-gradient);
+}
+
+@utility shadow-gold {
+  box-shadow: 0 0 28px color-mix(in oklab, var(--primary) 18%, transparent);
+}
+
 @utility shadow-lift {
-  box-shadow: 0 6px 0 0 oklch(0.269 0.033 305.8 / 15%);
+  box-shadow: 0 6px 0 0 oklch(0.04 0.004 85 / 55%);
 }
 
 @utility shadow-lift-lg {
-  box-shadow: 0 12px 0 0 oklch(0.269 0.033 305.8 / 12%);
+  box-shadow: 0 12px 0 0 oklch(0.04 0.004 85 / 62%);
 }
