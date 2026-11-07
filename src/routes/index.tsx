@@ -3,6 +3,7 @@ import { useState } from "react";
 import {
   applyBlackNovemberDiscount,
   BLACK_NOVEMBER_DISCOUNT_PERCENT,
+  roundRandPrices,
 } from "@/lib/pricing";
 
 const heroCollage = "/assets/hero-collage.jpg";
@@ -21,7 +22,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Black November: 30% off. Websites from R476, posters R17.85–R89.25, logos from R89.25, invites R35.70–R238, wallpapers R8.93–R47.60.",
+          "Black November: 30% off. Websites from R476, posters R18–R89, logos from R89, invites R36–R238, wallpapers R9–R48.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -30,7 +31,7 @@ export const Route = createFileRoute("/")({
       {
         name: "twitter:description",
         content:
-          "Black November: 30% off. Websites from R476, posters R17.85–R89.25, logos from R89.25, invites R35.70–R238, wallpapers R8.93–R47.60.",
+          "Black November: 30% off. Websites from R476, posters R18–R89, logos from R89, invites R36–R238, wallpapers R9–R48.",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -43,11 +44,11 @@ const ORDER_NOTE = "Hi Vyra! I'd like to order something.";
 function SalePrice({ price, size = "regular" }: { price: string; size?: "regular" | "large" }) {
   return (
     <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-      <span className={size === "large" ? "rounded-md bg-gold-gradient px-4 py-2 font-display text-xl font-bold text-primary-foreground shadow-gold" : "rounded-md bg-gold-gradient px-3 py-1.5 font-display text-base font-bold text-primary-foreground shadow-gold"}>
+      <span className={size === "large" ? "rounded-md bg-sale-gradient px-4 py-2 font-display text-xl font-bold text-primary-foreground shadow-sale" : "rounded-md bg-sale-gradient px-3 py-1.5 font-display text-base font-bold text-primary-foreground shadow-sale"}>
         {applyBlackNovemberDiscount(price)}
       </span>
       <span className="text-sm text-muted-foreground line-through decoration-primary/80">
-        {price}
+        {roundRandPrices(price)}
       </span>
     </div>
   );
@@ -55,7 +56,7 @@ function SalePrice({ price, size = "regular" }: { price: string; size?: "regular
 
 function SaleBadge({ compact = false }: { compact?: boolean }) {
   return (
-    <span className={`inline-flex items-center rounded-sm border border-primary/60 bg-primary/10 font-display font-bold uppercase text-primary shadow-gold ${compact ? "px-2 py-1 text-[0.65rem]" : "px-3 py-1.5 text-xs"}`}>
+    <span className={`inline-flex items-center rounded-sm border border-primary/60 bg-primary/10 font-display font-bold uppercase text-primary shadow-sale ${compact ? "px-2 py-1 text-[0.65rem]" : "px-3 py-1.5 text-xs"}`}>
       {compact ? `${BLACK_NOVEMBER_DISCOUNT_PERCENT}% OFF` : `SALE · ${BLACK_NOVEMBER_DISCOUNT_PERCENT}% OFF`}
     </span>
   );
@@ -189,7 +190,7 @@ function Index() {
             Better than{" "}
             <span className="relative inline-block text-primary-foreground">
               <span className="relative z-10">best</span>
-              <span className="absolute inset-x-[-0.3em] top-[-0.18em] bottom-[-0.18em] -rotate-2 rounded-lg bg-gold-gradient shadow-gold" />
+              <span className="absolute inset-x-[-0.3em] top-[-0.18em] bottom-[-0.18em] -rotate-2 rounded-lg bg-sale-gradient shadow-sale" />
             </span>
           </h1>
           <p className="mt-5 font-display text-xl font-semibold text-primary">
@@ -222,9 +223,9 @@ function Index() {
             alt="A collage of Vyra Digital products: a poster, a logo badge, a party invite and a phone wallpaper"
             width={1024}
             height={1024}
-            className="aspect-square w-full rounded-xl border border-primary/25 object-cover shadow-gold"
+            className="aspect-square w-full rounded-xl border border-primary/25 object-cover shadow-sale"
           />
-          <div className="absolute -bottom-4 -right-3 grid size-20 place-items-center rounded-full bg-gold-gradient text-center font-display text-xs font-bold leading-tight text-primary-foreground shadow-gold">
+          <div className="absolute -bottom-4 -right-3 grid size-20 place-items-center rounded-full bg-sale-gradient text-center font-display text-xs font-bold leading-tight text-primary-foreground shadow-sale">
             say hi!
           </div>
         </div>
@@ -245,7 +246,7 @@ function Index() {
           {products.map((product) => (
             <div
               key={product.name}
-              className="rounded-xl border border-border bg-card p-5 shadow-lift transition-all hover:-translate-y-1 hover:border-primary/60 hover:shadow-gold"
+              className="rounded-xl border border-border bg-card p-5 shadow-lift transition-all hover:-translate-y-1 hover:border-primary/60 hover:shadow-sale"
             >
               <button
                 type="button"

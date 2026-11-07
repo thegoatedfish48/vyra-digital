@@ -48,26 +48,26 @@
 
 :root {
   --radius: 1rem;
-  --background: oklch(0.12 0.004 85);
-  --foreground: oklch(0.97 0.008 85);
-  --card: oklch(0.18 0.006 85);
-  --card-foreground: oklch(0.97 0.008 85);
-  --popover: oklch(0.18 0.006 85);
-  --popover-foreground: oklch(0.97 0.008 85);
-  --primary: oklch(0.78 0.15 82);
-  --primary-foreground: oklch(0.14 0.008 75);
-  --secondary: oklch(0.28 0.008 85);
-  --secondary-foreground: oklch(0.97 0.008 85);
-  --muted: oklch(0.23 0.007 85);
-  --muted-foreground: oklch(0.77 0.012 85);
-  --accent: oklch(0.87 0.12 84);
-  --accent-foreground: oklch(0.14 0.008 75);
+  --background: oklch(0.98 0.008 250);
+  --foreground: oklch(0.23 0.025 255);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.23 0.025 255);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.23 0.025 255);
+  --primary: oklch(0.58 0.22 28);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.55 0.19 255);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.94 0.018 250);
+  --muted-foreground: oklch(0.48 0.025 255);
+  --accent: oklch(0.91 0.045 250);
+  --accent-foreground: oklch(0.3 0.09 255);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.78 0.15 82 / 22%);
-  --input: oklch(0.78 0.15 82 / 30%);
-  --ring: oklch(0.78 0.15 82);
-  --gold-gradient: linear-gradient(135deg, oklch(0.87 0.12 84), oklch(0.68 0.14 72));
+  --border: oklch(0.84 0.025 255);
+  --input: oklch(0.8 0.03 255);
+  --ring: oklch(0.58 0.22 28);
+  --sale-gradient: linear-gradient(120deg, var(--primary), var(--secondary));
   --font-family-display: "DM Serif Display", serif;
   --font-family-body: "DM Sans", sans-serif;
 }
@@ -94,18 +94,18 @@
   animation: spin-slow 22s linear infinite;
 }
 
-@utility bg-gold-gradient {
-  background-image: var(--gold-gradient);
+@utility bg-sale-gradient {
+  background-image: var(--sale-gradient);
 }
 
-@utility shadow-gold {
-  box-shadow: 0 0 28px color-mix(in oklab, var(--primary) 18%, transparent);
+@utility shadow-sale {
+  box-shadow: 0 0 28px color-mix(in oklab, var(--primary) 16%, var(--secondary) 12%, transparent);
 }
 
 @utility shadow-lift {
-  box-shadow: 0 6px 0 0 oklch(0.04 0.004 85 / 55%);
+  box-shadow: 0 6px 0 0 oklch(0.23 0.025 255 / 14%);
 }
 
 @utility shadow-lift-lg {
-  box-shadow: 0 12px 0 0 oklch(0.04 0.004 85 / 62%);
+  box-shadow: 0 12px 0 0 oklch(0.23 0.025 255 / 18%);
 }
