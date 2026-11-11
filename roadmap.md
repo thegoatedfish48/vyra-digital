@@ -37,3 +37,4 @@
 - [x] Removed the round R12.75 sticker from the corner of the hero photo (the "say hi!" sticker stays)
 - Halloween theme: black/orange/purple palette, floating ghosts + glowing jack-o-lanterns (Oct 31)
 - [x] Replace Halloween visuals with a red, blue and white Black November theme; retain 30% off and round all displayed original and sale prices to whole Rand.
+- [x] Restyle Black November as black, white and electric-red street art with oversized 30% OFF typography; preserve all listed prices and content.
