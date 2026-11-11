@@ -44,7 +44,7 @@ const ORDER_NOTE = "Hi Vyra! I'd like to order something.";
 function SalePrice({ price, size = "regular" }: { price: string; size?: "regular" | "large" }) {
   return (
     <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-      <span className={size === "large" ? "rounded-md bg-sale-gradient px-4 py-2 font-display text-xl font-bold text-primary-foreground shadow-sale" : "rounded-md bg-sale-gradient px-3 py-1.5 font-display text-base font-bold text-primary-foreground shadow-sale"}>
+      <span className={size === "large" ? "street-tag rounded-sm bg-sale-gradient px-4 py-2 font-display text-xl font-bold text-primary-foreground shadow-sale" : "street-tag rounded-sm bg-sale-gradient px-3 py-1.5 font-display text-base font-bold text-primary-foreground shadow-sale"}>
         {applyBlackNovemberDiscount(price)}
       </span>
       <span className="text-sm text-muted-foreground line-through decoration-primary/80">
@@ -56,7 +56,7 @@ function SalePrice({ price, size = "regular" }: { price: string; size?: "regular
 
 function SaleBadge({ compact = false }: { compact?: boolean }) {
   return (
-    <span className={`inline-flex items-center rounded-sm border border-primary/60 bg-primary/10 font-display font-bold uppercase text-primary shadow-sale ${compact ? "px-2 py-1 text-[0.65rem]" : "px-3 py-1.5 text-xs"}`}>
+    <span className={`street-tag inline-flex items-center rounded-sm border-2 border-primary bg-primary font-display font-bold uppercase text-primary-foreground shadow-sale ${compact ? "px-2 py-1 text-[0.65rem]" : "px-3 py-1.5 text-xs"}`}>
       {compact ? `${BLACK_NOVEMBER_DISCOUNT_PERCENT}% OFF` : `SALE · ${BLACK_NOVEMBER_DISCOUNT_PERCENT}% OFF`}
     </span>
   );
@@ -178,7 +178,7 @@ function Index() {
   const [viewing, setViewing] = useState<Product | null>(null);
 
   return (
-    <div className="relative overflow-x-hidden">
+    <div className="street-scene relative overflow-x-hidden">
       {/* hero */}
       <section className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 pb-10 pt-14 lg:grid-cols-2">
         <div>
@@ -186,15 +186,18 @@ function Index() {
             <SaleBadge />
             <span className="font-display text-sm font-semibold uppercase text-muted-foreground">Black November at Vyra Digital</span>
           </div>
-          <h1 className="mt-6 font-display text-6xl font-bold leading-[0.92] sm:text-7xl">
+          <h1 className="street-headline mt-6 text-6xl font-bold leading-[0.92] sm:text-7xl">
             Better than{" "}
             <span className="relative inline-block text-primary-foreground">
               <span className="relative z-10">best</span>
-              <span className="absolute inset-x-[-0.3em] top-[-0.18em] bottom-[-0.18em] -rotate-2 rounded-lg bg-sale-gradient shadow-sale" />
+              <span className="absolute inset-x-[-0.3em] top-[-0.18em] bottom-[-0.18em] -rotate-2 rounded-sm bg-sale-gradient shadow-sale" />
             </span>
           </h1>
-          <p className="mt-5 font-display text-xl font-semibold text-primary">
-            30% off every design and website.
+          <div className="street-splatter relative mt-8 inline-block py-3 pr-8" aria-label="30 percent off every design and website">
+            <span className="street-promo block">30% <span>OFF</span></span>
+          </div>
+          <p className="mt-5 font-display text-xl font-semibold uppercase text-primary">
+            Every design and website.
           </p>
           <p className="mt-3 max-w-md text-lg leading-relaxed text-muted-foreground">
             Websites, posters, logos, party invites &amp; wallpapers — made by
@@ -204,13 +207,13 @@ function Index() {
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
               href="#order"
-              className="rounded-full bg-primary px-8 py-4 font-display text-lg font-bold text-primary-foreground shadow-lift transition-transform hover:-translate-y-1"
+              className="street-tag rounded-sm bg-primary px-8 py-4 font-display text-lg font-bold uppercase text-primary-foreground shadow-sale transition-transform hover:-translate-y-1"
             >
               Order something
             </a>
             <a
               href="#work"
-              className="rounded-full border-2 border-foreground px-7 py-3.5 font-display text-lg font-semibold transition-colors hover:bg-foreground hover:text-background"
+              className="rounded-sm border-2 border-foreground px-7 py-3.5 font-display text-lg font-semibold uppercase transition-colors hover:bg-foreground hover:text-background hover:hover:text-background"
             >
               See the designs
             </a>
@@ -223,9 +226,9 @@ function Index() {
             alt="A collage of Vyra Digital products: a poster, a logo badge, a party invite and a phone wallpaper"
             width={1024}
             height={1024}
-            className="aspect-square w-full rounded-xl border border-primary/25 object-cover shadow-sale"
+            className="aspect-square w-full rounded-sm border-2 border-primary/50 object-cover shadow-sale"
           />
-          <div className="absolute -bottom-4 -right-3 grid size-20 place-items-center rounded-full bg-sale-gradient text-center font-display text-xs font-bold leading-tight text-primary-foreground shadow-sale">
+          <div className="street-tag absolute -bottom-4 -right-3 grid size-20 place-items-center rounded-full bg-sale-gradient text-center font-display text-xs font-bold leading-tight text-primary-foreground shadow-sale">
             say hi!
           </div>
         </div>
@@ -246,7 +249,7 @@ function Index() {
           {products.map((product) => (
             <div
               key={product.name}
-              className="rounded-xl border border-border bg-card p-5 shadow-lift transition-all hover:-translate-y-1 hover:border-primary/60 hover:shadow-sale"
+              className="street-grit-panel rounded-sm border border-border bg-card p-5 shadow-lift transition-all hover:-translate-y-1 hover:border-primary/60 hover:shadow-sale"
             >
               <button
                 type="button"
@@ -260,7 +263,7 @@ function Index() {
                   loading="lazy"
                   width={736}
                   height={912}
-                  className="aspect-[4/5] w-full rounded-2xl object-cover"
+                  className="aspect-[4/5] w-full rounded-sm object-cover"
                 />
                 <span className="absolute left-3 top-3"><SaleBadge compact /></span>
                 <span className="absolute inset-x-0 bottom-3 mx-auto w-fit rounded-md bg-foreground px-4 py-1.5 font-display text-sm font-bold text-background opacity-0 shadow-lift transition-opacity group-hover:opacity-100">
@@ -290,7 +293,7 @@ function Index() {
 
       {/* website price list */}
       <section className="mx-auto max-w-6xl px-6 pb-16">
-        <div className="rounded-[2.5rem] border-2 border-border bg-card p-8 shadow-lift sm:p-12">
+          <div className="street-grit-panel rounded-sm border-2 border-border bg-card p-8 shadow-lift sm:p-12">
           <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
             <h2 className="font-display text-4xl font-bold sm:text-5xl">
               Website options
@@ -324,7 +327,7 @@ function Index() {
 
       {/* logo price list */}
       <section className="mx-auto max-w-6xl px-6 pb-16">
-        <div className="rounded-[2.5rem] border-2 border-border bg-card p-8 shadow-lift sm:p-12">
+          <div className="street-grit-panel rounded-sm border-2 border-border bg-card p-8 shadow-lift sm:p-12">
           <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
             <h2 className="font-display text-4xl font-bold sm:text-5xl">
               Logo prices, pick your fit
@@ -358,7 +361,7 @@ function Index() {
 
       {/* other price ranges */}
       <section className="mx-auto max-w-6xl px-6 pb-16">
-        <div className="rounded-[2.5rem] border-2 border-border bg-card p-8 shadow-lift sm:p-12">
+          <div className="street-grit-panel rounded-sm border-2 border-border bg-card p-8 shadow-lift sm:p-12">
           <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
             <h2 className="font-display text-4xl font-bold sm:text-5xl">
               Posters, invites &amp; wallpaper prices
@@ -393,9 +396,8 @@ function Index() {
 
       {/* joke of the day */}
       <section className="mx-auto max-w-6xl px-6 pb-16">
-        <div className="relative overflow-hidden rounded-[2.5rem] border-2 border-border bg-card p-8 shadow-lift sm:p-12">
-          <div className="animate-spin-slow absolute -right-12 -top-12 size-32 rounded-full bg-accent/25" />
-          <span className="relative inline-block -rotate-3 rounded-full bg-accent px-4 py-1.5 font-display text-sm font-bold uppercase tracking-widest text-accent-foreground">
+        <div className="street-grit-panel street-splatter relative overflow-hidden rounded-sm border-2 border-primary/60 bg-card p-8 shadow-sale sm:p-12">
+          <span className="street-tag relative inline-block rounded-sm bg-primary px-4 py-1.5 font-display text-sm font-bold uppercase text-primary-foreground">
             Joke of the day
           </span>
           <p className="relative mt-5 max-w-3xl font-display text-3xl font-bold leading-tight sm:text-4xl">
@@ -409,8 +411,7 @@ function Index() {
 
       {/* order / contact */}
       <section id="order" className="mx-auto max-w-6xl px-6 pb-20">
-        <div className="relative overflow-hidden rounded-[2.5rem] bg-primary px-8 py-14 text-primary-foreground sm:px-14">
-          <div className="animate-spin-slow absolute -right-10 -top-10 size-40 rounded-full bg-accent/40" />
+        <div className="street-splatter relative overflow-hidden rounded-sm bg-primary px-8 py-14 text-primary-foreground shadow-sale sm:px-14">
           <div className="relative grid items-center gap-10 lg:grid-cols-2">
             <div>
               <h2 className="font-display text-5xl font-bold leading-[0.95] sm:text-6xl">
@@ -423,7 +424,7 @@ function Index() {
                 sort it out personally. Usually reply within a day.
               </p>
             </div>
-            <div className="rounded-3xl border border-primary-foreground/20 bg-primary-foreground/10 p-7">
+            <div className="street-grit-panel rounded-sm border border-primary-foreground/30 bg-primary-foreground/10 p-7">
               <p className="mb-5 font-display text-sm font-semibold uppercase tracking-widest text-primary-foreground/70">
                 Reach us
               </p>
@@ -486,7 +487,7 @@ function Index() {
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-md rounded-[2rem] bg-card p-5 shadow-lift-lg"
+            className="street-grit-panel relative w-full max-w-md rounded-sm border border-primary/50 bg-card p-5 shadow-lift-lg"
           >
             <img
               src={viewing.image}
