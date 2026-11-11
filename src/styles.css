@@ -68,7 +68,7 @@
   --input: oklch(0.34 0.016 250);
   --ring: oklch(0.64 0.26 27);
   --sale-gradient: linear-gradient(115deg, var(--primary), color-mix(in oklab, var(--primary) 76%, var(--foreground)));
-  --font-family-display: "Impact", "Arial Black", sans-serif;
+  --font-family-display: "Bowlby One SC", "Arial Black", sans-serif;
   --font-family-body: "DM Sans", sans-serif;
 }
 
@@ -103,9 +103,9 @@
 
 .street-promo {
   color: var(--color-foreground);
-  font-family: var(--font-family-display);
+  font-family: "Permanent Marker", var(--font-family-display);
   font-size: clamp(4.5rem, 15vw, 8rem);
-  font-style: italic;
+  font-style: normal;
   font-weight: 900;
   line-height: 0.76;
   text-transform: uppercase;

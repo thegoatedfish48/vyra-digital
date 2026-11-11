@@ -213,7 +213,7 @@ function Index() {
             </a>
             <a
               href="#work"
-              className="rounded-sm border-2 border-foreground px-7 py-3.5 font-display text-lg font-semibold uppercase transition-colors hover:bg-foreground hover:text-background hover:hover:text-background"
+              className="rounded-sm border-2 border-foreground px-7 py-3.5 font-display text-lg font-semibold uppercase transition-colors hover:bg-foreground hover:text-background"
             >
               See the designs
             </a>
