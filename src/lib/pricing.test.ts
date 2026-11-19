@@ -22,3 +22,10 @@ test("original prices are also displayed as whole Rand", () => {
   strictEqual(roundRandPrices("R12.75–R68"), "R13–R68");
   strictEqual(roundRandPrices("R2,125+"), "R2,125+");
 });
+
+test("logo prices from the user's screenshot receive 30% off", () => {
+  strictEqual(applyBlackNovemberDiscount("R150"), "R105");
+  strictEqual(applyBlackNovemberDiscount("R250"), "R175");
+  strictEqual(applyBlackNovemberDiscount("R500"), "R350");
+  strictEqual(applyBlackNovemberDiscount("R350"), "R245");
+});

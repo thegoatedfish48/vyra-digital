@@ -22,7 +22,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Black November: 30% off. Websites from R476, posters R18–R89, logos from R89, invites R36–R238, wallpapers R9–R48.",
+          "Black November: 30% off. Websites from R476, posters R18–R89, logos from R105, invites R36–R238, wallpapers R9–R48.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -31,7 +31,7 @@ export const Route = createFileRoute("/")({
       {
         name: "twitter:description",
         content:
-          "Black November: 30% off. Websites from R476, posters R18–R89, logos from R89, invites R36–R238, wallpapers R9–R48.",
+          "Black November: 30% off. Websites from R476, posters R18–R89, logos from R105, invites R36–R238, wallpapers R9–R48.",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -87,7 +87,7 @@ const products = [
   },
   {
     name: "Logos",
-    price: "from R127.50",
+    price: "from R150",
     image: "/assets/vyra-logo.png",
     alt: "Black and white VD monogram with Vyradigital Better than best by Vyra Digital",
     blurb: "A little mark for your side project, café or brand. Clean and yours.",
@@ -112,22 +112,22 @@ const products = [
 const logoTiers = [
   {
     name: "Basic logo",
-    price: "R127.50",
+    price: "R150",
     blurb: "One clean, simple logo. Perfect for getting started.",
   },
   {
     name: "Custom logo",
-    price: "R212.50",
+    price: "R250",
     blurb: "Made from scratch around your idea, name and colours.",
   },
   {
     name: "Premium logo package",
-    price: "R467.50",
+    price: "R500",
     blurb: "The full works — versions, variations and files for everywhere.",
   },
   {
     name: "Logo + profile picture",
-    price: "R297.50",
+    price: "R350",
     blurb: "A logo plus a matching profile pic for your socials.",
   },
 ];

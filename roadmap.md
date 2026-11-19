@@ -38,3 +38,4 @@
 - Halloween theme: black/orange/purple palette, floating ghosts + glowing jack-o-lanterns (Oct 31)
 - [x] Replace Halloween visuals with a red, blue and white Black November theme; retain 30% off and round all displayed original and sale prices to whole Rand.
 - [x] Restyle Black November as black, white and electric-red street art with oversized 30% OFF typography; preserve all listed prices and content.
+- [x] Apply the 30% discount to the original logo prices from the user's screenshot: Basic R150 → R105, Custom R250 → R175, Premium R500 → R350, Logo + profile picture R350 → R245.
